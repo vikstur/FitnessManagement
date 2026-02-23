@@ -64,7 +64,7 @@
             button1.ForeColor = Color.Red;
             button1.Location = new Point(8, 8);
             button1.Name = "button1";
-            button1.Size = new Size(185, 37);
+            button1.Size = new Size(185, 42);
             button1.TabIndex = 2;
             button1.Text = "About RGym";
             button1.UseVisualStyleBackColor = false;

@@ -32,6 +32,7 @@
             homeControl1 = new HomeControl();
             loginControl1 = new LoginControl();
             registerControl1 = new RegisterControl();
+            clientControl1 = new ClientControl();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -62,11 +63,19 @@
             registerControl1.Size = new Size(1106, 756);
             registerControl1.TabIndex = 3;
             // 
+            // clientControl1
+            // 
+            clientControl1.Location = new Point(0, 0);
+            clientControl1.Name = "clientControl1";
+            clientControl1.Size = new Size(1106, 756);
+            clientControl1.TabIndex = 4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 717);
+            Controls.Add(clientControl1);
             Controls.Add(loginControl1);
             Controls.Add(registerControl1);
             Controls.Add(homeControl1);
@@ -82,5 +91,6 @@
         private HomeControl homeControl1;
         private LoginControl loginControl1;
         private RegisterControl registerControl1;
+        private ClientControl clientControl1;
     }
 }

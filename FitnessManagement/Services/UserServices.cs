@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using FitnessManagement.Core;
 
 
 namespace FitnessManagement.Services
@@ -74,7 +75,7 @@ namespace FitnessManagement.Services
                 MessageBox.Show("Wrong password.");
                 return;
             }
-
+            UserSession.CurrentUser = user;
             MessageBox.Show("Login successful!");
         }
     }

@@ -1,5 +1,7 @@
-﻿using FitnessManagement.Models;
+﻿using FitnessManagement.Core;
+using FitnessManagement.Models;
 using FitnessManagement.Services;
+using FitnessManagement.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,9 +25,8 @@ namespace FitnessManagement
 
         private void LoginControl_Load(object sender, EventArgs e)
         {
-
+            
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text ==""||textBox2.Text=="")
@@ -36,7 +37,9 @@ namespace FitnessManagement
             string email = textBox1.Text.Trim();
             string password = textBox2.Text.Trim();
             _userServices.LoginUser(email , password);
-            
+            this.Hide();
+            Form1 mainForm = (Form1)this.FindForm();
+           
         }
     }
 }
