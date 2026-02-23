@@ -67,8 +67,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1090, 717);
-            Controls.Add(registerControl1);
             Controls.Add(loginControl1);
+            Controls.Add(registerControl1);
             Controls.Add(homeControl1);
             Controls.Add(aboutrGym1);
             Name = "Form1";

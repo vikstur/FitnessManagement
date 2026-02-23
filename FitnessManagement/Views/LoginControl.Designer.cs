@@ -99,6 +99,7 @@
             button2.TabIndex = 6;
             button2.Text = "Login";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -134,8 +135,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+         public TextBox textBox1;
+        public TextBox textBox2;
         private Button button2;
         private Button button3;
     }

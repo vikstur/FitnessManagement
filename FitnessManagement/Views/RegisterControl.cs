@@ -1,11 +1,12 @@
-﻿using System;
+﻿using FitnessManagement.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using FitnessManagement.Services;
+using static FitnessManagement.Services.UserServices;
 
 namespace FitnessManagement
 {
@@ -44,7 +45,7 @@ namespace FitnessManagement
             string firstName = textBox1.Text.Trim();
             string lastName = textBox2.Text.Trim();
             string email = textBox3.Text.Trim();
-            string password = textBox4.Text.Trim();
+            string password = PasswordHelper.HashPassword(textBox4.Text);
             string phone = textBox5.Text.Trim();
 
             _userServices.CreateUser(email, firstName, lastName, password, phone);
