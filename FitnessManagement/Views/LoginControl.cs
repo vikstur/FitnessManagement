@@ -39,7 +39,7 @@ namespace FitnessManagement
             _userServices.LoginUser(email , password);
             this.Hide();
             Form1 mainForm = (Form1)this.FindForm();
-           
+            mainForm.Change("Client");
         }
     }
 }

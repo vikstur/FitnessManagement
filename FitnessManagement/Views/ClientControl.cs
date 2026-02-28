@@ -22,12 +22,14 @@ namespace FitnessManagement.Views
             {
                 label1.Text =
                     "Welcome to RGym " + UserSession.CurrentUser.FirstName + ", you can buy a subscription from here:";
+                label1.Parent = pictureBox1;
+                label1.BackColor = Color.Transparent;
             }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

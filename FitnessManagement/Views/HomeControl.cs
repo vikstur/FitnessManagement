@@ -14,5 +14,10 @@ namespace FitnessManagement.Views
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
