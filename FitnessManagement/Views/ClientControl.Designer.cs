@@ -34,7 +34,6 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             button3 = new Button();
-            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -49,6 +48,7 @@
             button1.TabIndex = 0;
             button1.Text = "about RGym";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -84,23 +84,14 @@
             button3.Name = "button3";
             button3.Size = new Size(403, 49);
             button3.TabIndex = 4;
-            button3.Text = "button3";
+            button3.Text = "Purchase Subscription";
             button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(352, 517);
-            button4.Name = "button4";
-            button4.Size = new Size(403, 49);
-            button4.TabIndex = 5;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // ClientControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(label1);
             Controls.Add(button2);
@@ -120,6 +111,5 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Button button3;
-        private Button button4;
     }
 }

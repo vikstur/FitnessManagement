@@ -32,6 +32,23 @@ namespace FitnessManagement.Views
             {
                 clientControl1.Show();
             }
+            else if (control == "About")
+            {
+                aboutrGym1.Show();
+            }
+            else if (control == "Login")
+            {
+                loginControl1.Show();
+            }
+            else if (control == "Register")
+            {
+                registerControl1.Show();
+            }
+            else if (control == "PurchaseRequest")
+            {
+               purchaseRequest1.Show();
+            }
+
         }
        
     }

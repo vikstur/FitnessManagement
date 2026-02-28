@@ -33,6 +33,7 @@
             loginControl1 = new LoginControl();
             registerControl1 = new RegisterControl();
             clientControl1 = new ClientControl();
+            purchaseRequest1 = new PurchaseRequest();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -70,11 +71,19 @@
             clientControl1.Size = new Size(1106, 756);
             clientControl1.TabIndex = 4;
             // 
+            // purchaseRequest1
+            // 
+            purchaseRequest1.Location = new Point(0, 0);
+            purchaseRequest1.Name = "purchaseRequest1";
+            purchaseRequest1.Size = new Size(1106, 756);
+            purchaseRequest1.TabIndex = 5;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
+            Controls.Add(purchaseRequest1);
             Controls.Add(aboutrGym1);
             Controls.Add(clientControl1);
             Controls.Add(loginControl1);
@@ -92,5 +101,6 @@
         private LoginControl loginControl1;
         private RegisterControl registerControl1;
         private ClientControl clientControl1;
+        private PurchaseRequest purchaseRequest1;
     }
 }
