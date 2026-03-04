@@ -34,6 +34,7 @@
             registerControl1 = new RegisterControl();
             clientControl1 = new ClientControl();
             purchaseRequest1 = new PurchaseRequest();
+            employee1 = new FitnessManagement.Services.Employee();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -79,17 +80,25 @@
             purchaseRequest1.TabIndex = 5;
             purchaseRequest1.Load += purchaseRequest1_Load;
             // 
+            // employee1
+            // 
+            employee1.Location = new Point(0, 0);
+            employee1.Name = "employee1";
+            employee1.Size = new Size(1106, 756);
+            employee1.TabIndex = 6;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
+            Controls.Add(employee1);
+            Controls.Add(homeControl1);
+            Controls.Add(registerControl1);
             Controls.Add(loginControl1);
             Controls.Add(purchaseRequest1);
-            Controls.Add(registerControl1);
             Controls.Add(aboutrGym1);
             Controls.Add(clientControl1);
-            Controls.Add(homeControl1);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -103,5 +112,6 @@
         private RegisterControl registerControl1;
         private ClientControl clientControl1;
         private PurchaseRequest purchaseRequest1;
+        private Services.Employee employee1;
     }
 }

@@ -17,6 +17,8 @@ public partial class Subscription
 
     public DateOnly EndDate { get; set; }
 
+    public int? Visits { get; set; }
+
     public string Status { get; set; }
 
     public DateTime? CreatedAt { get; set; }

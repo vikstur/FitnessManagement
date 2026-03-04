@@ -1,4 +1,5 @@
 ﻿using FitnessManagement.Services;
+using FitnessManagement.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,8 @@ namespace FitnessManagement
 
             _userServices.CreateUser(email, firstName, lastName, password, phone);
             ClearFields();
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("Login");
         }
          
         

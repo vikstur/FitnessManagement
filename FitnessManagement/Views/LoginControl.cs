@@ -37,7 +37,13 @@ namespace FitnessManagement
             string email = textBox1.Text.Trim();
             string password = textBox2.Text.Trim();
             _userServices.LoginUser(email , password);
-            this.Hide();
+            if (UserSession.CurrentUser==null)
+            {
+                textBox1.Clear();
+                textBox2.Clear();
+                return;
+            }
+         
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("Client");
         }

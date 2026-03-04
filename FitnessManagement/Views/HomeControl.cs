@@ -19,5 +19,17 @@ namespace FitnessManagement.Views
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("Login");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("Register");
+        }
     }
 }

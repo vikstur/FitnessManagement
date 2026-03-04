@@ -14,8 +14,10 @@ namespace FitnessManagement.Views
     public partial class PurchaseRequest : UserControl
     {
         private UserServices _userServices;
+        private SubscriptionServices _subscriptionServices;
         public PurchaseRequest()
         {
+            _subscriptionServices = new SubscriptionServices(); 
             _userServices = new UserServices();
             InitializeComponent();
         }
@@ -59,7 +61,7 @@ namespace FitnessManagement.Views
             if (result == DialogResult.OK)
             {
                 
-                _userServices.CreateRequest(2);
+                _subscriptionServices.CreateRequest(2);
                 MessageBox.Show("Requested successfuly");
             }
             else

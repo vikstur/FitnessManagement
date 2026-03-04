@@ -17,15 +17,17 @@ namespace FitnessManagement.Views
 
             InitializeComponent();
             aboutrGym1.Hide();
-            homeControl1.Hide();
             registerControl1.Hide();
             clientControl1.Hide();
-
+            loginControl1.Hide();
+            purchaseRequest1.Hide();
+           
         }
         public void Change(string control)
         {
             if (control == "Home")
             {
+                HideEverything();
                 homeControl1.Show();
             }
             else if (control == "Client")
@@ -35,18 +37,22 @@ namespace FitnessManagement.Views
             }
             else if (control == "About")
             {
+                HideEverything();
                 aboutrGym1.Show();
             }
             else if (control == "Login")
             {
+                HideEverything();
                 loginControl1.Show();
             }
             else if (control == "Register")
             {
+                HideEverything();
                 registerControl1.Show();
             }
             else if (control == "PurchaseRequest")
             {
+                HideEverything();
                 purchaseRequest1.Show();
             }
 

@@ -39,7 +39,7 @@ public partial class FitnessManagementDBContext : DbContext
     {
         modelBuilder.Entity<Attendance>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__attendan__3213E83FFE4606A4");
+            entity.HasKey(e => e.Id).HasName("PK__attendan__3213E83F0D9623F2");
 
             entity.ToTable("attendances");
 
@@ -72,7 +72,7 @@ public partial class FitnessManagementDBContext : DbContext
 
         modelBuilder.Entity<PurchaseRequest>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__purchase__3213E83FC753464F");
+            entity.HasKey(e => e.Id).HasName("PK__purchase__3213E83F1AFA4792");
 
             entity.ToTable("purchase_requests");
 
@@ -102,7 +102,7 @@ public partial class FitnessManagementDBContext : DbContext
 
         modelBuilder.Entity<Service>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__services__3213E83FA7005653");
+            entity.HasKey(e => e.Id).HasName("PK__services__3213E83F2D26F90C");
 
             entity.ToTable("services");
 
@@ -119,7 +119,7 @@ public partial class FitnessManagementDBContext : DbContext
 
         modelBuilder.Entity<Subscription>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83F01FCCB5C");
+            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83F2751FA54");
 
             entity.ToTable("subscriptions");
 
@@ -136,6 +136,7 @@ public partial class FitnessManagementDBContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("status");
             entity.Property(e => e.TypeId).HasColumnName("type_id");
+            entity.Property(e => e.Visits).HasColumnName("visits");
 
             entity.HasOne(d => d.Client).WithMany(p => p.Subscriptions)
                 .HasForeignKey(d => d.ClientId)
@@ -150,7 +151,7 @@ public partial class FitnessManagementDBContext : DbContext
 
         modelBuilder.Entity<SubscriptionType>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83F84FC44CC");
+            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83F02C242B5");
 
             entity.ToTable("subscription_types");
 
@@ -175,7 +176,7 @@ public partial class FitnessManagementDBContext : DbContext
 
         modelBuilder.Entity<SubscriptionTypeService>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83FADCB5088");
+            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83F81282BE7");
 
             entity.ToTable("subscription_type_services");
 
@@ -194,11 +195,11 @@ public partial class FitnessManagementDBContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__users__3213E83F15E470AC");
+            entity.HasKey(e => e.Id).HasName("PK__users__3213E83F8F0B585A");
 
             entity.ToTable("users");
 
-            entity.HasIndex(e => e.Email, "UQ__users__AB6E6164C2C8C60D").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__users__AB6E616453657D4D").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CreatedAt)
