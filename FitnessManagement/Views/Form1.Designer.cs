@@ -77,17 +77,18 @@
             purchaseRequest1.Name = "purchaseRequest1";
             purchaseRequest1.Size = new Size(1106, 756);
             purchaseRequest1.TabIndex = 5;
+            purchaseRequest1.Load += purchaseRequest1_Load;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
+            Controls.Add(loginControl1);
             Controls.Add(purchaseRequest1);
+            Controls.Add(registerControl1);
             Controls.Add(aboutrGym1);
             Controls.Add(clientControl1);
-            Controls.Add(loginControl1);
-            Controls.Add(registerControl1);
             Controls.Add(homeControl1);
             Name = "Form1";
             Text = "Form1";

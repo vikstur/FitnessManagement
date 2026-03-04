@@ -15,7 +15,7 @@ public partial class SubscriptionType
 
     public decimal Price { get; set; }
 
-    public int? DailyVisitLimit { get; set; }
+    public int? Visits { get; set; }
 
     public string Description { get; set; }
 

@@ -11,25 +11,26 @@ namespace FitnessManagement.Views
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
-           
+
             InitializeComponent();
             aboutrGym1.Hide();
             homeControl1.Hide();
             registerControl1.Hide();
             clientControl1.Hide();
-          
+
         }
         public void Change(string control)
         {
-            if (control=="Home")
+            if (control == "Home")
             {
                 homeControl1.Show();
             }
-            else if (control=="Client")
+            else if (control == "Client")
             {
+                HideEverything();
                 clientControl1.Show();
             }
             else if (control == "About")
@@ -46,10 +47,23 @@ namespace FitnessManagement.Views
             }
             else if (control == "PurchaseRequest")
             {
-               purchaseRequest1.Show();
+                purchaseRequest1.Show();
             }
 
         }
-       
+        public void HideEverything()
+        {
+            aboutrGym1.Hide();
+            homeControl1.Hide();
+            registerControl1.Hide();
+            clientControl1.Hide();
+            loginControl1.Hide();
+            purchaseRequest1.Hide();
+        }
+
+        private void purchaseRequest1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

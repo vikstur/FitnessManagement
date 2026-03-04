@@ -78,5 +78,34 @@ namespace FitnessManagement.Services
             UserSession.CurrentUser = user;
             MessageBox.Show("Login successful!");
         }
+        public void CreateRequest(int subscriptionTypeId)
+        {
+            var existingRequest = _db.PurchaseRequests
+               .FirstOrDefault(r =>
+                   r.ClientId == UserSession.CurrentUser.Id &&
+                   r.TypeId == subscriptionTypeId &&
+                   r.Status == "Pending");
+
+            if (existingRequest != null)
+            {
+                MessageBox.Show("You already have a pending request for this subscription.");
+                return;
+
+            }
+
+            var request = new PurchaseRequest
+            {
+                ClientId = UserSession.CurrentUser.Id,
+                TypeId = subscriptionTypeId,
+                Status = "Pending",
+                RquestedAt = DateTime.Now,
+                ProcessedAt = null
+            };
+
+            _db.PurchaseRequests.Add(request);
+            _db.SaveChanges();
+
+            
+        }
     }
 }

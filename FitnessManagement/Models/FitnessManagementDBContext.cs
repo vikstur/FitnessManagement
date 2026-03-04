@@ -33,13 +33,13 @@ public partial class FitnessManagementDBContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-CBNDVHL\\SQLEXPRESS;Initial Catalog=FitnessManagementDB;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-CBNDVHL\\SQLEXPRESS;Initial Catalog=FitnessManagementDB;Integrated Security=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Attendance>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__attendan__3213E83FDE56EBDD");
+            entity.HasKey(e => e.Id).HasName("PK__attendan__3213E83FFE4606A4");
 
             entity.ToTable("attendances");
 
@@ -54,33 +54,30 @@ public partial class FitnessManagementDBContext : DbContext
 
             entity.HasOne(d => d.CheckedByNavigation).WithMany(p => p.AttendanceCheckedByNavigations)
                 .HasForeignKey(d => d.CheckedBy)
-                .HasConstraintName("FK__attendanc__check__6B24EA82");
+                .HasConstraintName("FK__attendanc__check__6477ECF3");
 
             entity.HasOne(d => d.Client).WithMany(p => p.AttendanceClients)
                 .HasForeignKey(d => d.ClientId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__attendanc__check__68487DD7");
+                .HasConstraintName("FK__attendanc__check__619B8048");
 
             entity.HasOne(d => d.Service).WithMany(p => p.Attendances)
                 .HasForeignKey(d => d.ServiceId)
-                .HasConstraintName("FK__attendanc__servi__6A30C649");
+                .HasConstraintName("FK__attendanc__servi__6383C8BA");
 
             entity.HasOne(d => d.Subscription).WithMany(p => p.Attendances)
                 .HasForeignKey(d => d.SubscriptionId)
-                .HasConstraintName("FK__attendanc__subsc__693CA210");
+                .HasConstraintName("FK__attendanc__subsc__628FA481");
         });
 
         modelBuilder.Entity<PurchaseRequest>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__purchase__3213E83F33937EF7");
+            entity.HasKey(e => e.Id).HasName("PK__purchase__3213E83FC753464F");
 
             entity.ToTable("purchase_requests");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.ClientId).HasColumnName("client_id");
-            entity.Property(e => e.Paid)
-                .HasDefaultValue(true)
-                .HasColumnName("paid");
             entity.Property(e => e.ProcessedAt).HasColumnName("processed_at");
             entity.Property(e => e.RquestedAt)
                 .HasDefaultValueSql("(getdate())")
@@ -95,17 +92,17 @@ public partial class FitnessManagementDBContext : DbContext
             entity.HasOne(d => d.Client).WithMany(p => p.PurchaseRequests)
                 .HasForeignKey(d => d.ClientId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__purchase___clien__5EBF139D");
+                .HasConstraintName("FK__purchase___clien__5812160E");
 
             entity.HasOne(d => d.Type).WithMany(p => p.PurchaseRequests)
                 .HasForeignKey(d => d.TypeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__purchase___type___5FB337D6");
+                .HasConstraintName("FK__purchase___type___59063A47");
         });
 
         modelBuilder.Entity<Service>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__services__3213E83FDC700605");
+            entity.HasKey(e => e.Id).HasName("PK__services__3213E83FA7005653");
 
             entity.ToTable("services");
 
@@ -122,7 +119,7 @@ public partial class FitnessManagementDBContext : DbContext
 
         modelBuilder.Entity<Subscription>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83F9059B1B2");
+            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83F01FCCB5C");
 
             entity.ToTable("subscriptions");
 
@@ -132,7 +129,6 @@ public partial class FitnessManagementDBContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnName("created_at");
             entity.Property(e => e.EndDate).HasColumnName("end_date");
-            entity.Property(e => e.RemainingVisits).HasColumnName("remaining_visits");
             entity.Property(e => e.StartDate).HasColumnName("start_date");
             entity.Property(e => e.Status)
                 .IsRequired()
@@ -144,17 +140,17 @@ public partial class FitnessManagementDBContext : DbContext
             entity.HasOne(d => d.Client).WithMany(p => p.Subscriptions)
                 .HasForeignKey(d => d.ClientId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__subscript__clien__6383C8BA");
+                .HasConstraintName("FK__subscript__clien__5CD6CB2B");
 
             entity.HasOne(d => d.Type).WithMany(p => p.Subscriptions)
                 .HasForeignKey(d => d.TypeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__subscript__type___6477ECF3");
+                .HasConstraintName("FK__subscript__type___5DCAEF64");
         });
 
         modelBuilder.Entity<SubscriptionType>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83F0B481807");
+            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83F84FC44CC");
 
             entity.ToTable("subscription_types");
 
@@ -162,7 +158,6 @@ public partial class FitnessManagementDBContext : DbContext
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnName("created_at");
-            entity.Property(e => e.DailyVisitLimit).HasColumnName("daily_visit_limit");
             entity.Property(e => e.Description)
                 .HasColumnType("text")
                 .HasColumnName("description");
@@ -175,11 +170,12 @@ public partial class FitnessManagementDBContext : DbContext
             entity.Property(e => e.Price)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("price");
+            entity.Property(e => e.Visits).HasColumnName("visits");
         });
 
         modelBuilder.Entity<SubscriptionTypeService>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83FF642A26E");
+            entity.HasKey(e => e.Id).HasName("PK__subscrip__3213E83FADCB5088");
 
             entity.ToTable("subscription_type_services");
 
@@ -198,11 +194,11 @@ public partial class FitnessManagementDBContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__users__3213E83F488AB15F");
+            entity.HasKey(e => e.Id).HasName("PK__users__3213E83F15E470AC");
 
             entity.ToTable("users");
 
-            entity.HasIndex(e => e.Email, "UQ__users__AB6E616487DDBE97").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__users__AB6E6164C2C8C60D").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CreatedAt)

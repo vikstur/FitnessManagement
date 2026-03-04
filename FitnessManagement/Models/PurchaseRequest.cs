@@ -15,8 +15,6 @@ public partial class PurchaseRequest
 
     public string Status { get; set; }
 
-    public bool? Paid { get; set; }
-
     public DateTime? RquestedAt { get; set; }
 
     public DateTime? ProcessedAt { get; set; }
