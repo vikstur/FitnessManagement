@@ -34,6 +34,7 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -41,11 +42,12 @@
             // 
             label1.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Bold);
             label1.ForeColor = Color.Red;
-            label1.Location = new Point(370, 176);
+            label1.Location = new Point(358, 82);
             label1.Name = "label1";
             label1.Size = new Size(388, 61);
             label1.TabIndex = 0;
             label1.Text = "Welcome to RGym";
+            label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
@@ -69,6 +71,7 @@
             button1.TabIndex = 2;
             button1.Text = "About RGym";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -90,10 +93,23 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // label2
+            // 
+            label2.BackColor = SystemColors.ButtonHighlight;
+            label2.Font = new Font("Stencil", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(358, 170);
+            label2.Name = "label2";
+            label2.Size = new Size(388, 189);
+            label2.TabIndex = 5;
+            label2.Text = "Working time 8:00-22:00\r\n\r\nFor more information, please login\r\n";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
             // HomeControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label2);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -101,6 +117,7 @@
             Controls.Add(pictureBox1);
             Name = "HomeControl";
             Size = new Size(1106, 756);
+            Load += HomeControl_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -112,5 +129,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private Label label2;
     }
 }

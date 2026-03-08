@@ -25,27 +25,48 @@ namespace FitnessManagement
 
         private void LoginControl_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text ==""||textBox2.Text=="")
+            Form1 mainForm = (Form1)this.FindForm();
+            if (textBox1.Text == "" || textBox2.Text == "")
             {
                 MessageBox.Show("Please fill all the required fields");
+                return;
             }
 
             string email = textBox1.Text.Trim();
             string password = textBox2.Text.Trim();
-            _userServices.LoginUser(email , password);
-            if (UserSession.CurrentUser==null)
+
+            _userServices.LoginUser(email, password);
+            if (UserSession.CurrentUser.Role=="Employee")
+            {
+                
+                mainForm.Change("Employee");
+                return;
+            }
+            if (UserSession.CurrentUser == null)
             {
                 textBox1.Clear();
                 textBox2.Clear();
                 return;
             }
-         
-            Form1 mainForm = (Form1)this.FindForm();
+
+           
             mainForm.Change("Client");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("Home");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("Home");
         }
     }
 }

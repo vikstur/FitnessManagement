@@ -55,6 +55,11 @@ namespace FitnessManagement.Views
                 HideEverything();
                 purchaseRequest1.Show();
             }
+            else if (control == "Requests")
+            {
+                HideEverything();
+                purchaseRequest1.Show();
+            }
 
         }
         public void HideEverything()
@@ -65,6 +70,7 @@ namespace FitnessManagement.Views
             clientControl1.Hide();
             loginControl1.Hide();
             purchaseRequest1.Hide();
+            requests2.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)

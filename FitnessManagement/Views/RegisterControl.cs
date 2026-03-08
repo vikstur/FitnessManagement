@@ -29,9 +29,9 @@ namespace FitnessManagement
             textBox4.Clear();
             textBox5.Clear();
         }
-            
-            
-          
+
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "" ||
@@ -54,7 +54,17 @@ namespace FitnessManagement
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("Login");
         }
-         
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("Home");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("Home");
+        }
     }
 }

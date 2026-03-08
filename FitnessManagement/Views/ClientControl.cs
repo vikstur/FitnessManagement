@@ -1,4 +1,5 @@
 ﻿using FitnessManagement.Core;
+using FitnessManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,13 +7,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
 namespace FitnessManagement.Views
 {
     public partial class ClientControl : UserControl
     {
+        private UserServices _userServices;
         public ClientControl()
         {
+            _userServices = new UserServices();
             InitializeComponent();
         }
 
@@ -47,6 +49,31 @@ namespace FitnessManagement.Views
         {
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("PurchaseRequest");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+           "Are you sure you want to log out",
+           "Confirm",
+           MessageBoxButtons.OKCancel,
+           MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK)
+            {
+                Form1 mainForm = (Form1)this.FindForm();
+                _userServices.Logout();
+                _userServices.LoginClear(mainForm.loginControl1);
+                MessageBox.Show("Logged out successfully");
+                
+                mainForm.Change("Home");
+                
+                
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

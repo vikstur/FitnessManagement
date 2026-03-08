@@ -44,9 +44,10 @@
             button1.ForeColor = Color.Red;
             button1.Location = new Point(3, 3);
             button1.Name = "button1";
-            button1.Size = new Size(185, 42);
+            button1.Size = new Size(91, 42);
             button1.TabIndex = 0;
-            button1.Text = "about RGym";
+            button1.Text = "RGym";
+            button1.TextAlign = ContentAlignment.TopCenter;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -58,6 +59,7 @@
             button2.TabIndex = 1;
             button2.Text = "Log out";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // pictureBox1
             // 
@@ -71,16 +73,18 @@
             // 
             // label1
             // 
-            label1.Location = new Point(352, 227);
+            label1.Font = new Font("Showcard Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(352, 168);
             label1.Name = "label1";
-            label1.Size = new Size(403, 232);
+            label1.Size = new Size(403, 143);
             label1.TabIndex = 3;
             label1.Text = "label1";
+            label1.TextAlign = ContentAlignment.TopCenter;
             label1.Click += label1_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(352, 462);
+            button3.Location = new Point(352, 314);
             button3.Name = "button3";
             button3.Size = new Size(403, 49);
             button3.TabIndex = 4;

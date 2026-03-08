@@ -37,6 +37,7 @@ namespace FitnessManagement.Views
 
             if (result == DialogResult.OK)
             {
+                _subscriptionServices.CreateRequest(2);
                 MessageBox.Show("Requested successfuly");
             }
             else
@@ -53,57 +54,69 @@ namespace FitnessManagement.Views
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-            "Are you sure you want to buy this subscription?",
-            "Confirm",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Warning);
+                "Are you sure you want to buy this subscription?",
+                "Confirm",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
 
             if (result == DialogResult.OK)
             {
-                
-                _subscriptionServices.CreateRequest(2);
-                MessageBox.Show("Requested successfuly");
+                bool created = _subscriptionServices.CreateRequest(2);
+
+                if (created)
+                {
+                    MessageBox.Show("Request sent successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("You already have a pending request for this subscription.");
+                }
             }
-            else
-            {
-                return;
-            }
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-            "Are you sure you want to buy this subscription?",
-            "Confirm",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Warning);
+                "Are you sure you want to buy this subscription?",
+                "Confirm",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning);
 
             if (result == DialogResult.OK)
             {
-                MessageBox.Show("Requested successfuly");
-            }
-            else
-            {
-                return;
+                bool created = _subscriptionServices.CreateRequest(2);
+
+                if (created)
+                {
+                    MessageBox.Show("Request sent successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("You already have a pending request for this subscription.");
+                }
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-            "Are you sure you want to buy this subscription?",
-            "Confirm",
-            MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Warning);
+               "Are you sure you want to buy this subscription?",
+               "Confirm",
+               MessageBoxButtons.OKCancel,
+               MessageBoxIcon.Warning);
 
             if (result == DialogResult.OK)
             {
-                MessageBox.Show("Requested successfuly");
-            }
-            else
-            {
-                return;
+                bool created = _subscriptionServices.CreateRequest(2);
+
+                if (created)
+                {
+                    MessageBox.Show("Request sent successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("You already have a pending request for this subscription.");
+                }
             }
         }
 
@@ -135,6 +148,7 @@ namespace FitnessManagement.Views
 
             if (result == DialogResult.OK)
             {
+                _subscriptionServices.CreateRequest(2);
                 MessageBox.Show("Requested successfuly");
             }
             else

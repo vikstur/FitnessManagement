@@ -97,9 +97,9 @@
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.Font = new Font("Showcard Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(340, 131);
+            label1.Location = new Point(325, 131);
             label1.Name = "label1";
-            label1.Size = new Size(100, 23);
+            label1.Size = new Size(134, 23);
             label1.TabIndex = 6;
             label1.Text = "Premium yearly";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -122,9 +122,9 @@
             label5.BackColor = SystemColors.ActiveCaptionText;
             label5.Font = new Font("Showcard Gothic", 9F, FontStyle.Bold);
             label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(343, 424);
+            label5.Location = new Point(340, 424);
             label5.Name = "label5";
-            label5.Size = new Size(100, 25);
+            label5.Size = new Size(118, 25);
             label5.TabIndex = 10;
             label5.Text = "Basic yearly";
             label5.TextAlign = ContentAlignment.TopCenter;
@@ -134,9 +134,9 @@
             label6.BackColor = SystemColors.ActiveCaptionText;
             label6.Font = new Font("Showcard Gothic", 9F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ButtonHighlight;
-            label6.Location = new Point(672, 424);
+            label6.Location = new Point(655, 424);
             label6.Name = "label6";
-            label6.Size = new Size(100, 25);
+            label6.Size = new Size(128, 25);
             label6.TabIndex = 11;
             label6.Text = "Basic monthly";
             label6.TextAlign = ContentAlignment.TopCenter;
@@ -172,7 +172,7 @@
             label11.Name = "label11";
             label11.Size = new Size(196, 126);
             label11.TabIndex = 16;
-            label11.Text = "Duration: 1 year\r\n\r\nFitness visits:365 times\r\nSauna visits: Not available\r\n\r\nSwimming pool visits: Not available";
+            label11.Text = "Duration: 1 year\r\n\r\nFitness visits:365 times\r\n\r\nSauna visits: Not available\r\n\r\nSwimming pool visits: Not available";
             // 
             // label12
             // 

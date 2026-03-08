@@ -47,6 +47,7 @@
             button1.TabIndex = 0;
             button1.Text = "RGym";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -109,6 +110,7 @@
             button3.TabIndex = 7;
             button3.Text = "Back";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // LoginControl
             // 

@@ -78,7 +78,15 @@ namespace FitnessManagement.Services
             UserSession.CurrentUser = user;
             MessageBox.Show("Login successful!");
         }
-       
-        
+       public void Logout()
+        {
+            UserSession.CurrentUser = null;
+        }
+        public void LoginClear(LoginControl login)
+        {
+            login.textBox1.Clear();
+            login.textBox2.Clear();
+        }
+
     }
 }

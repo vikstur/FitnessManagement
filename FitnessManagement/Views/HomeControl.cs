@@ -31,5 +31,24 @@ namespace FitnessManagement.Views
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("Register");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("About");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HomeControl_Load(object sender, EventArgs e)
+        {
+            label1.Parent = this.pictureBox1;
+            label1.BackColor = Color.Transparent;
+            label2.Parent = this.pictureBox1;
+            label2.BackColor = Color.Transparent;
+        }
     }
 }

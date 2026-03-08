@@ -47,6 +47,7 @@
             button1.TabIndex = 0;
             button1.Text = "RGym";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -62,7 +63,9 @@
             // 
             // label2
             // 
+            label2.BackColor = SystemColors.ActiveCaptionText;
             label2.Font = new Font("Showcard Gothic", 21.75F);
+            label2.ForeColor = SystemColors.ButtonFace;
             label2.Location = new Point(104, 168);
             label2.Name = "label2";
             label2.Size = new Size(931, 557);

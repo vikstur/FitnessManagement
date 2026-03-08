@@ -13,25 +13,29 @@ namespace FitnessManagement.Services
         {
             _db = new FitnessManagementDBContext();
         }
-        public List<PurchaseRequest> GetPendingRequests()
+        public List<RequestViewModel> GetPendingRequests() => _db.PurchaseRequests
+        .Where(r => r.Status == "Pending")
+        .Select(r => new RequestViewModel
         {
-            return _db.PurchaseRequests
-                .Where(r => r.Status == "Pending")
-                .ToList();
-        }
-        public void CreateRequest(int subscriptionTypeId)
+            Id = r.Id,
+            FirstName = r.Client.FirstName,
+            LastName = r.Client.LastName,
+            Status = r.Status,
+            RequestedAt = r.RquestedAt
+        })
+        .ToList();
+
+        public bool CreateRequest(int subscriptionTypeId)
         {
             var existingRequest = _db.PurchaseRequests
-               .FirstOrDefault(r =>
-                   r.ClientId == UserSession.CurrentUser.Id &&
-                   r.TypeId == subscriptionTypeId &&
-                   r.Status == "Pending");
+                .FirstOrDefault(r =>
+                    r.ClientId == UserSession.CurrentUser.Id &&
+                    r.TypeId == subscriptionTypeId &&
+                    r.Status == "Pending");
 
             if (existingRequest != null)
             {
-                MessageBox.Show("You already have a pending request for this subscription.");
-                return;
-
+                return false;
             }
 
             var request = new PurchaseRequest
@@ -46,8 +50,9 @@ namespace FitnessManagement.Services
             _db.PurchaseRequests.Add(request);
             _db.SaveChanges();
 
-
+            return true;
         }
+        
         public void ApproveRequest(int requestId)
         {
             var request = _db.PurchaseRequests
