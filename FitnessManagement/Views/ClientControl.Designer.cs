@@ -34,6 +34,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -92,10 +93,21 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(119, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(120, 42);
+            button4.TabIndex = 5;
+            button4.Text = "Check subscription";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
+            // 
             // ClientControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(label1);
             Controls.Add(button2);
@@ -115,5 +127,6 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Button button3;
+        private Button button4;
     }
 }

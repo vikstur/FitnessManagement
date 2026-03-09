@@ -1,5 +1,6 @@
 ﻿using FitnessManagement.Core;
 using FitnessManagement.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -98,6 +99,53 @@ namespace FitnessManagement.Services
 
             _db.SaveChanges();
         }
-       
+        public List<string> GetCurrentUserSubscriptionInfo()
+        {
+            var result = new List<string>();
+
+            if (UserSession.CurrentUser == null)
+            {
+                return result;
+            }
+               
+
+            var subscription = _db.Subscriptions
+                .Include(s => s.Type)
+                .FirstOrDefault(s =>
+                    s.ClientId == UserSession.CurrentUser.Id &&
+                    s.Status == "Active");
+
+            if (subscription == null)
+            {
+                result.Add("No active subscription.");
+                return result;
+            }
+
+            var services = _db.SubscriptionTypeServices
+                .Where(st => st.SubscriptionTypeId == subscription.TypeId)
+                .Select(st => st.Service.Name)
+                .ToList();
+
+            bool fitness = services.Contains("Fitness");
+            bool spa = services.Contains("SPA");
+            bool pool = services.Contains("Pool");
+
+            if (subscription.Visits == null)
+            {
+                result.Add($"Fitness: {(fitness ? "Available" : "Not available")}");
+                result.Add($"Swimming Pool: {(pool ? "Available" : "Not available")}");
+                result.Add($"Sauna: {(spa ? "Available" : "Not available")}");
+            }
+            else
+            {
+                result.Add($"Fitness: {(fitness ? $"Visits left: {subscription.Visits}" : "Not available")}");
+                result.Add($"Swimming Pool: {(pool ? "Available" : "Not available")}");
+                result.Add($"Sauna: {(spa ? "Available" : "Not available")}");
+            }
+
+            result.Add($"Valid to: {subscription.EndDate}");
+
+            return result;
+        }
     }
 }

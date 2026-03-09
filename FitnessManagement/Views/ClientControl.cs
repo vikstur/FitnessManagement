@@ -65,15 +65,21 @@ namespace FitnessManagement.Views
                 _userServices.Logout();
                 _userServices.LoginClear(mainForm.loginControl1);
                 MessageBox.Show("Logged out successfully");
-                
+
                 mainForm.Change("Home");
-                
-                
+
+
             }
             else
             {
                 return;
             }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("CheckSubscriptions");
         }
     }
 }

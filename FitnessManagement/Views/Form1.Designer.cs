@@ -35,6 +35,7 @@
             clientControl1 = new ClientControl();
             purchaseRequest1 = new PurchaseRequest();
             requests2 = new Requests();
+            checkSubscription1 = new CheckSubscription();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -87,13 +88,21 @@
             requests2.Size = new Size(1106, 756);
             requests2.TabIndex = 6;
             // 
+            // checkSubscription1
+            // 
+            checkSubscription1.Location = new Point(0, 0);
+            checkSubscription1.Name = "checkSubscription1";
+            checkSubscription1.Size = new Size(1106, 756);
+            checkSubscription1.TabIndex = 7;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
-            Controls.Add(requests2);
             Controls.Add(homeControl1);
+            Controls.Add(checkSubscription1);
+            Controls.Add(requests2);
             Controls.Add(purchaseRequest1);
             Controls.Add(registerControl1);
             Controls.Add(loginControl1);
@@ -114,5 +123,6 @@
         private PurchaseRequest purchaseRequest1;
         private Requests requests1;
         private Requests requests2;
+        private CheckSubscription checkSubscription1;
     }
 }

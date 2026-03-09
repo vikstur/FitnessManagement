@@ -58,9 +58,13 @@ namespace FitnessManagement.Views
             else if (control == "Requests")
             {
                 HideEverything();
-                purchaseRequest1.Show();
+                requests2.Show();
             }
-
+            else if (control == "CheckSubscriptions")
+            {
+                HideEverything();
+                checkSubscription1.Show();
+            }
         }
         public void HideEverything()
         {
@@ -71,6 +75,7 @@ namespace FitnessManagement.Views
             loginControl1.Hide();
             purchaseRequest1.Hide();
             requests2.Hide();
+            checkSubscription1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)
