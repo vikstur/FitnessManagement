@@ -134,13 +134,13 @@ namespace FitnessManagement.Services
             {
                 result.Add($"Fitness: {(fitness ? "Available" : "Not available")}");
                 result.Add($"Swimming Pool: {(pool ? "Available" : "Not available")}");
-                result.Add($"Sauna: {(spa ? "Available" : "Not available")}");
+                result.Add($"SPA: {(spa ? "Available" : "Not available")}");
             }
             else
             {
                 result.Add($"Fitness: {(fitness ? $"Visits left: {subscription.Visits}" : "Not available")}");
                 result.Add($"Swimming Pool: {(pool ? "Available" : "Not available")}");
-                result.Add($"Sauna: {(spa ? "Available" : "Not available")}");
+                result.Add($"SPA: {(spa ? "Available" : "Not available")}");
             }
 
             result.Add($"Valid to: {subscription.EndDate}");

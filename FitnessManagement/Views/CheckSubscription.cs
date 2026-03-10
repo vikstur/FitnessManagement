@@ -20,6 +20,14 @@ namespace FitnessManagement.Views
             _subscriptionServices = new SubscriptionServices();
             _userServices = new UserServices();
             InitializeComponent();
+            var data = _subscriptionServices.GetCurrentUserSubscriptionInfo();
+
+            listBox1.Items.Clear();
+
+            foreach (var item in data)
+            {
+                listBox1.Items.Add(item);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,8 +38,6 @@ namespace FitnessManagement.Views
 
         private void CheckSubscription_Load(object sender, EventArgs e)
         {
-            
-
             var data = _subscriptionServices.GetCurrentUserSubscriptionInfo();
 
             listBox1.Items.Clear();
