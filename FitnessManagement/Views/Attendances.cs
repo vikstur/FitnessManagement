@@ -58,7 +58,7 @@ namespace FitnessManagement.Views
             User selectedUser = (User)comboBox1.SelectedItem;
             int userId = selectedUser.Id;
 
-            DateTime checkIn = monthCalendar1.SelectionStart;
+            DateTime checkIn = monthCalendar1.SelectionStart.Date + DateTime.Now.TimeOfDay;
 
             if (checkBox1.Checked)
                 _attendanceServices.CreateAttendance(userId, 1, checkIn);

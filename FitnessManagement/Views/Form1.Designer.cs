@@ -38,6 +38,7 @@
             checkSubscription1 = new CheckSubscription();
             employee1 = new Employee();
             attendances1 = new Attendances();
+            checkVisits1 = new CheckVisits();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -112,12 +113,20 @@
             attendances1.Size = new Size(1106, 756);
             attendances1.TabIndex = 10;
             // 
+            // checkVisits1
+            // 
+            checkVisits1.Location = new Point(0, 0);
+            checkVisits1.Name = "checkVisits1";
+            checkVisits1.Size = new Size(1106, 756);
+            checkVisits1.TabIndex = 11;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
             Controls.Add(homeControl1);
+            Controls.Add(checkVisits1);
             Controls.Add(attendances1);
             Controls.Add(employee1);
             Controls.Add(checkSubscription1);
@@ -145,5 +154,6 @@
         private CheckSubscription checkSubscription1;
         private Employee employee1;
         private Attendances attendances1;
+        private CheckVisits checkVisits1;
     }
 }

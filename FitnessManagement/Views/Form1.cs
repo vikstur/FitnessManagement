@@ -16,11 +16,8 @@ namespace FitnessManagement.Views
         {
 
             InitializeComponent();
-            aboutrGym1.Hide();
-            registerControl1.Hide();
-            clientControl1.Hide();
-            loginControl1.Hide();
-            purchaseRequest1.Hide();
+            HideEverything();
+            homeControl1.Show();
 
         }
         public void Change(string control)
@@ -75,6 +72,11 @@ namespace FitnessManagement.Views
                 HideEverything();
                 attendances1.Show();
             }
+            else if (control == "CheckVisits")
+            {
+                HideEverything();
+                checkVisits1.Show();
+            }
         }
         public void HideEverything()
         {
@@ -88,6 +90,7 @@ namespace FitnessManagement.Views
             checkSubscription1.Hide();
             employee1.Hide();
             attendances1.Hide();
+            checkVisits1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)

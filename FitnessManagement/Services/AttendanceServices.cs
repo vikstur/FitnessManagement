@@ -78,5 +78,22 @@ namespace FitnessManagement.Services
 
             return sub.Visits != null;
         }
+        public List<AttendanceView> GetAttendances()
+        {
+            int userId = UserSession.CurrentUser.Id;
+
+            return _db.Attendances
+        .Where(a => a.ClientId == userId)
+        .Select(a => new AttendanceView
+        {
+                    Id = a.Id,
+                    ClientName = a.Client.FirstName + " " + a.Client.LastName,
+                    ServiceName = a.Service.Name,
+                    CheckInTime = a.CheckInTime,
+                    CheckedBy = a.CheckedByNavigation.FirstName
+                })
+                .OrderByDescending(a => a.CheckInTime)
+                .ToList();
+        }
     }
 }

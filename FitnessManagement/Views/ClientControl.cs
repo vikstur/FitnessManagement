@@ -23,7 +23,7 @@ namespace FitnessManagement.Views
             if (UserSession.IsLoggedIn)
             {
                 label1.Text =
-                    "Welcome to RGym " + UserSession.CurrentUser.FirstName + ", you can buy a subscription from here:";
+                    "Welcome to RGym " + UserSession.CurrentUser.FirstName + ", you can Buy subscription from here";
                 label1.Parent = pictureBox1;
                 label1.BackColor = Color.Transparent;
             }
@@ -80,6 +80,17 @@ namespace FitnessManagement.Views
         {
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("CheckSubscriptions");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("CheckVisits");
         }
     }
 }
