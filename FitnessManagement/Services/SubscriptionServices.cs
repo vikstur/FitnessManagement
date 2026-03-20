@@ -104,48 +104,69 @@ namespace FitnessManagement.Services
             var result = new List<string>();
 
             if (UserSession.CurrentUser == null)
-            {
                 return result;
-            }
-               
 
-            var subscription = _db.Subscriptions
+            var subscriptions = _db.Subscriptions
                 .Include(s => s.Type)
-                .FirstOrDefault(s =>
+                .Where(s =>
                     s.ClientId == UserSession.CurrentUser.Id &&
-                    s.Status == "Active");
+                    s.Status == "Active")
+                .ToList();
 
-            if (subscription == null)
+            if (subscriptions.Count == 0)
             {
                 result.Add("No active subscription.");
                 return result;
             }
 
-            var services = _db.SubscriptionTypeServices
-                .Where(st => st.SubscriptionTypeId == subscription.TypeId)
-                .Select(st => st.Service.Name)
-                .ToList();
-
-            bool fitness = services.Contains("Fitness");
-            bool spa = services.Contains("SPA");
-            bool pool = services.Contains("Pool");
-
-            if (subscription.Visits == null)
+            foreach (var subscription in subscriptions)
             {
-                result.Add($"Fitness: {(fitness ? "Available" : "Not available")}");
-                result.Add($"Swimming Pool: {(pool ? "Available" : "Not available")}");
-                result.Add($"SPA: {(spa ? "Available" : "Not available")}");
-            }
-            else
-            {
-                result.Add($"Fitness: {(fitness ? $"Visits left: {subscription.Visits}" : "Not available")}");
-                result.Add($"Swimming Pool: {(pool ? "Available" : "Not available")}");
-                result.Add($"SPA: {(spa ? "Available" : "Not available")}");
-            }
+                result.Add($"--- {subscription.Type.Name} ---");
 
-            result.Add($"Valid to: {subscription.EndDate}");
+                var services = _db.SubscriptionTypeServices
+                    .Where(st => st.SubscriptionTypeId == subscription.TypeId)
+                    .Select(st => st.Service.Name)
+                    .ToList();
+
+                bool fitness = services.Contains("Fitness");
+                bool spa = services.Contains("SPA");
+                bool pool = services.Contains("Pool");
+
+                if (subscription.Visits == null)
+                {
+                    result.Add($"Fitness: {(fitness ? "Available" : "Not available")}");
+                    result.Add($"Swimming Pool: {(pool ? "Available" : "Not available")}");
+                    result.Add($"SPA: {(spa ? "Available" : "Not available")}");
+                }
+                else
+                {
+                    result.Add($"Fitness: {(fitness ? $"Visits left: {subscription.Visits}" : "Not available")}");
+                    result.Add($"Swimming Pool: {(pool ? "Available" : "Not available")}");
+                    result.Add($"SPA: {(spa ? "Available" : "Not available")}");
+                }
+
+                result.Add($"Valid to: {subscription.EndDate}");
+                result.Add(""); // empty line for spacing
+            }
 
             return result;
+        }
+        public List<SubscriptionView> GetUserSubscriptions(int userId)
+        {
+            return _db.Subscriptions
+                .Where(s => s.ClientId == userId)
+                .Include(s => s.Type)
+                .AsEnumerable()
+                .Select(s => new SubscriptionView
+                {
+                    TypeName = s.Type != null ? s.Type.Name : "Unknown",
+                    StartDate = s.StartDate.ToDateTime(TimeOnly.MinValue),
+                    EndDate = s.EndDate.ToDateTime(TimeOnly.MinValue),
+                    Visits = s.Visits,
+                    Status = s.Status
+                })
+                .OrderByDescending(s => s.StartDate)
+                .ToList();
         }
     }
 }

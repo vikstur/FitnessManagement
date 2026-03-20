@@ -79,7 +79,13 @@ namespace FitnessManagement.Services
             MessageBox.Show("Login successful!");
 
         }
-       public void Logout()
+        public List<User> GetAllClients()
+        {
+            return _db.Users
+                .Where(u => u.Role == "Client")
+                .ToList();
+        }
+        public void Logout()
         {
             UserSession.CurrentUser = null;
         }

@@ -37,7 +37,7 @@ namespace FitnessManagement.Views
 
             if (result == DialogResult.OK)
             {
-                _subscriptionServices.CreateRequest(2);
+                _subscriptionServices.CreateRequest(3);
                 MessageBox.Show("Requested successfuly");
             }
             else
@@ -84,7 +84,7 @@ namespace FitnessManagement.Views
 
             if (result == DialogResult.OK)
             {
-                bool created = _subscriptionServices.CreateRequest(2);
+                bool created = _subscriptionServices.CreateRequest(1);
 
                 if (created)
                 {
@@ -148,7 +148,7 @@ namespace FitnessManagement.Views
 
             if (result == DialogResult.OK)
             {
-                _subscriptionServices.CreateRequest(2);
+                _subscriptionServices.CreateRequest(4);
                 MessageBox.Show("Requested successfuly");
             }
             else

@@ -78,15 +78,17 @@
             button3.TabIndex = 3;
             button3.Text = "Requsets";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(934, 1);
+            button4.Location = new Point(956, 0);
             button4.Name = "button4";
-            button4.Size = new Size(150, 44);
+            button4.Size = new Size(150, 45);
             button4.TabIndex = 4;
-            button4.Text = "Check Subscriptions";
+            button4.Text = "Check Client Subscriptions";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // label1
             // 

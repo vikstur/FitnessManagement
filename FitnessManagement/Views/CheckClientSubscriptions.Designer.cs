@@ -1,6 +1,6 @@
 ﻿namespace FitnessManagement.Views
 {
-    partial class CheckSubscription
+    partial class CheckClientSubscriptions
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,69 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
             button1 = new Button();
-            label1 = new Label();
-            label2 = new Label();
+            comboBox1 = new ComboBox();
+            listBox1 = new ListBox();
             SuspendLayout();
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(310, 210);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(432, 349);
-            listBox1.TabIndex = 0;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // button1
             // 
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
-            button1.Size = new Size(103, 38);
-            button1.TabIndex = 1;
+            button1.Size = new Size(94, 43);
+            button1.TabIndex = 0;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // label1
+            // comboBox1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(341, 94);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(326, 157);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(494, 23);
+            comboBox1.TabIndex = 1;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // label2
+            // listBox1
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(572, 94);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 3;
-            label2.Text = "label2";
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(326, 206);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(494, 424);
+            listBox1.TabIndex = 2;
             // 
-            // CheckSubscription
+            // CheckClientSubscriptions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(button1);
             Controls.Add(listBox1);
-            Name = "CheckSubscription";
+            Controls.Add(comboBox1);
+            Controls.Add(button1);
+            Name = "CheckClientSubscriptions";
             Size = new Size(1106, 756);
-            Load += CheckSubscription_Load;
+            Load += CheckClientSubscriptions_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private ListBox listBox1;
         private Button button1;
-        private Label label1;
-        private Label label2;
+        private ComboBox comboBox1;
+        private ListBox listBox1;
     }
 }

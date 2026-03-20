@@ -77,6 +77,11 @@ namespace FitnessManagement.Views
                 HideEverything();
                 checkVisits1.Show();
             }
+            else if (control == "CheckClientSubscriptions")
+            {
+                HideEverything();
+               checkClientSubscriptions1.Show();
+            }
         }
         public void HideEverything()
         {
@@ -91,6 +96,7 @@ namespace FitnessManagement.Views
             employee1.Hide();
             attendances1.Hide();
             checkVisits1.Hide();
+            checkClientSubscriptions1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)
