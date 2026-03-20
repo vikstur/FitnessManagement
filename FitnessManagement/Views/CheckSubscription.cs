@@ -38,11 +38,25 @@ namespace FitnessManagement.Views
 
         private void CheckSubscription_Load(object sender, EventArgs e)
         {
-            var data = _subscriptionServices.GetCurrentUserSubscriptionInfo();
+            var subs = _subscriptionServices.GetCurrentUserSubscriptionInfo();
 
             listBox1.Items.Clear();
 
-            foreach (var item in data)
+            if (subs.Count == 0 || (subs.Count == 1 && subs[0] == "No active subscription."))
+            {
+                // ❌ NO subscription
+                label1.Visible = false;
+                label2.Visible = true;
+
+                listBox1.Items.Clear();
+                return;
+            }
+
+            // ✅ HAS subscription(s)
+            label1.Visible = true;
+            label2.Visible = false;
+
+            foreach (var item in subs)
             {
                 listBox1.Items.Add(item);
             }

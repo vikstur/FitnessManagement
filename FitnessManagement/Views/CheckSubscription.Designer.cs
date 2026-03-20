@@ -56,20 +56,23 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(341, 94);
+            label1.Font = new Font("Segoe UI Emoji", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(242, 138);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(573, 36);
             label1.TabIndex = 2;
-            label1.Text = "label1";
+            label1.Text = "Here you can check your active subscription";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(572, 94);
+            label2.Font = new Font("Segoe UI Emoji", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(310, 138);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(432, 36);
             label2.TabIndex = 3;
-            label2.Text = "label2";
+            label2.Text = "You have no active subscriptions";
             // 
             // CheckSubscription
             // 
