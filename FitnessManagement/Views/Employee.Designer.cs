@@ -35,6 +35,7 @@
             button3 = new Button();
             button4 = new Button();
             label1 = new Label();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -98,10 +99,21 @@
             label1.TabIndex = 5;
             label1.Text = "label1";
             // 
+            // button5
+            // 
+            button5.Location = new Point(250, 0);
+            button5.Name = "button5";
+            button5.Size = new Size(150, 44);
+            button5.TabIndex = 6;
+            button5.Text = "ClientSearch";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Employee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button5);
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -122,5 +134,6 @@
         private Button button3;
         private Button button4;
         private Label label1;
+        private Button button5;
     }
 }

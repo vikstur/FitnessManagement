@@ -94,6 +94,34 @@ namespace FitnessManagement.Services
             login.textBox1.Clear();
             login.textBox2.Clear();
         }
+        public List<User> SearchClients(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return new List<User>(); // ✅ return empty list instead
 
+            var query = _db.Users
+                .Where(u => u.Role == "Client");
+
+            var parts = input.Trim()
+                             .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            if (parts.Length == 1)
+            {
+                string firstName = parts[0].ToLower();
+
+                query = query.Where(u => u.FirstName.ToLower().Contains(firstName));
+            }
+            else
+            {
+                string firstName = parts[0].ToLower();
+                string lastName = parts[1].ToLower();
+
+                query = query.Where(u =>
+                    u.FirstName.ToLower().Contains(firstName) &&
+                    u.LastName.ToLower().Contains(lastName));
+            }
+
+            return query.ToList();
+        }
     }
 }
