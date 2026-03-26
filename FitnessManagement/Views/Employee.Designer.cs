@@ -36,6 +36,7 @@
             button4 = new Button();
             label1 = new Label();
             button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -60,10 +61,11 @@
             button1.TabIndex = 1;
             button1.Text = "Rgym";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(492, 1);
+            button2.Location = new Point(275, 0);
             button2.Name = "button2";
             button2.Size = new Size(150, 44);
             button2.TabIndex = 2;
@@ -73,7 +75,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(737, 0);
+            button3.Location = new Point(447, 0);
             button3.Name = "button3";
             button3.Size = new Size(150, 45);
             button3.TabIndex = 3;
@@ -83,11 +85,11 @@
             // 
             // button4
             // 
-            button4.Location = new Point(956, 0);
+            button4.Location = new Point(616, 0);
             button4.Name = "button4";
             button4.Size = new Size(150, 45);
             button4.TabIndex = 4;
-            button4.Text = "Check Client Subscriptions";
+            button4.Text = "Check client subscriptions";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -101,18 +103,29 @@
             // 
             // button5
             // 
-            button5.Location = new Point(250, 0);
+            button5.Location = new Point(100, 0);
             button5.Name = "button5";
             button5.Size = new Size(150, 44);
             button5.TabIndex = 6;
-            button5.Text = "ClientSearch";
+            button5.Text = "Client search";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(789, 0);
+            button6.Name = "button6";
+            button6.Size = new Size(150, 46);
+            button6.TabIndex = 7;
+            button6.Text = "Check visits by date";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // Employee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(label1);
             Controls.Add(button4);
@@ -135,5 +148,6 @@
         private Button button4;
         private Label label1;
         private Button button5;
+        private Button button6;
     }
 }

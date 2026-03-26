@@ -4,21 +4,15 @@ using System.Text;
 
 namespace FitnessManagement.Models
 {
-   public class AttendanceView
+    public class VisitsView
     {
-        public int Id { get; set; }
-
         public string ClientName { get; set; }
-
-        public string ServiceName { get; set; }
-
+        public string SubscriptionType { get; set; }
         public DateTime CheckInTime { get; set; }
-
-        public string CheckedBy { get; set; }
 
         public override string ToString()
         {
-            return $"{ClientName} | {ServiceName} | {CheckInTime:dd.MM.yyyy HH:mm} | Checked by: {CheckedBy}";
+            return $"{ClientName} | {SubscriptionType} | {CheckInTime:dd.MM.yyyy HH:mm}";
         }
     }
 }

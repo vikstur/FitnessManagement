@@ -87,6 +87,11 @@ namespace FitnessManagement.Views
                 HideEverything();
                 clientSearch1.Show();
             }
+            else if (control == "CheckVisitsByDate")
+            {
+                HideEverything();
+                checkVisitsByDate1.Show();
+            }
         }
         public void HideEverything()
         {
@@ -103,6 +108,7 @@ namespace FitnessManagement.Views
             checkVisits1.Hide();
             checkClientSubscriptions1.Hide();
             clientSearch1.Hide();
+            checkVisitsByDate1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)

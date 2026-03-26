@@ -12,12 +12,12 @@ namespace FitnessManagement.Views
 {
     public partial class Employee : UserControl
     {
-       
+
         private SubscriptionServices _subscriptionServices;
         private AttendanceServices _attendanceServices;
         public Employee()
         {
-           
+
             _attendanceServices = new AttendanceServices();
             _subscriptionServices = new SubscriptionServices();
             InitializeComponent();
@@ -43,9 +43,20 @@ namespace FitnessManagement.Views
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("ClientSearch");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("CheckVisitsByDate");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

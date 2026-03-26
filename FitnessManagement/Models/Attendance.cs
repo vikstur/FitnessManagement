@@ -15,7 +15,7 @@ public partial class Attendance
 
     public int? ServiceId { get; set; }
 
-    public DateTime? CheckInTime { get; set; }
+    public DateTime CheckInTime { get; set; }
 
     public int? CheckedBy { get; set; }
 
