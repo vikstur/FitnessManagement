@@ -149,7 +149,16 @@ namespace FitnessManagement.Services
                 result.Add(""); // empty line for spacing
             }
 
+
             return result;
+        }
+        public List<SubscriptionType> GetAllSubscriptionTypes()
+        {
+            // We include SubscriptionTypeServices and the actual Service names
+            return _db.SubscriptionTypes
+                .Include(st => st.SubscriptionTypeServices)
+                    .ThenInclude(sts => sts.Service)
+                .ToList();
         }
         public List<SubscriptionView> GetUserSubscriptions(int userId)
         {
