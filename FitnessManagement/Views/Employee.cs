@@ -15,9 +15,10 @@ namespace FitnessManagement.Views
 
         private SubscriptionServices _subscriptionServices;
         private AttendanceServices _attendanceServices;
+        private UserServices _userServices;
         public Employee()
         {
-
+            _userServices = new UserServices();
             _attendanceServices = new AttendanceServices();
             _subscriptionServices = new SubscriptionServices();
             InitializeComponent();
@@ -57,6 +58,31 @@ namespace FitnessManagement.Views
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+         "Are you sure you want to log out",
+         "Confirm",
+         MessageBoxButtons.OKCancel,
+         MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK)
+            {
+                Form1 mainForm = (Form1)this.FindForm();
+                _userServices.Logout();
+                _userServices.LoginClear(mainForm.loginControl1);
+                MessageBox.Show("Logged out successfully");
+
+                mainForm.Change("Home");
+
+
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

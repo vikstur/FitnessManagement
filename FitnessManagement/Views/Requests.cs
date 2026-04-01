@@ -50,5 +50,11 @@ namespace FitnessManagement.Views
             MessageBox.Show("Request rejected.");
             LoadRequests();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("Employee");
+        }
     }
 }

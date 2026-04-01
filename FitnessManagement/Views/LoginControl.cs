@@ -46,6 +46,12 @@ namespace FitnessManagement
                 mainForm.Change("Employee");
                 return;
             }
+            if (UserSession.CurrentUser.Role == "Admin")
+            {
+
+                mainForm.Change("Admin");
+                return;
+            }
             if (UserSession.CurrentUser == null)
             {
                 textBox1.Clear();

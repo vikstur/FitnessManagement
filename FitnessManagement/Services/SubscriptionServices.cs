@@ -31,14 +31,22 @@ namespace FitnessManagement.Services
             var existingRequest = _db.PurchaseRequests
                 .FirstOrDefault(r =>
                     r.ClientId == UserSession.CurrentUser.Id &&
-                    r.TypeId == subscriptionTypeId &&
                     r.Status == "Pending");
 
             if (existingRequest != null)
             {
-                return false;
+                return false; 
             }
 
+            var activeSubscription = _db.Subscriptions
+                .FirstOrDefault(s =>
+                    s.ClientId == UserSession.CurrentUser.Id &&
+                    s.Status == "Active");
+
+            if (activeSubscription != null)
+            {
+                return false; 
+            }
             var request = new PurchaseRequest
             {
                 ClientId = UserSession.CurrentUser.Id,
@@ -53,7 +61,7 @@ namespace FitnessManagement.Services
 
             return true;
         }
-        
+
         public void ApproveRequest(int requestId)
         {
             var request = _db.PurchaseRequests
@@ -177,5 +185,39 @@ namespace FitnessManagement.Services
                 .OrderByDescending(s => s.StartDate)
                 .ToList();
         }
+        public void UpdateSubscriptionType(int typeId, decimal price, int duration, int? visits, List<string> serviceNames)
+        {
+            var subType = _db.SubscriptionTypes
+                .Include(t => t.SubscriptionTypeServices)
+                .FirstOrDefault(t => t.Id == typeId);
+
+            if (subType == null) return;
+
+            // 1. Update basic properties
+            subType.Price = price;
+            subType.DurationDays = duration;
+            subType.Visits = visits;
+
+            // 2. Update Services (Remove old, add new)
+            // Clear existing links
+            _db.SubscriptionTypeServices.RemoveRange(subType.SubscriptionTypeServices);
+
+            // Find the service IDs based on names provided
+            var selectedServices = _db.Services
+                .Where(s => serviceNames.Contains(s.Name))
+                .ToList();
+
+            foreach (var service in selectedServices)
+            {
+                subType.SubscriptionTypeServices.Add(new SubscriptionTypeService
+                {
+                    SubscriptionTypeId = typeId,
+                    ServiceId = service.Id
+                });
+            }
+
+            _db.SaveChanges();
+        }
+
     }
 }

@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             aboutrGym1 = new AboutRGym();
             homeControl1 = new HomeControl();
@@ -42,6 +42,9 @@
             checkClientSubscriptions1 = new CheckClientSubscriptions();
             clientSearch1 = new ClientSearch();
             checkVisitsByDate1 = new CheckVisitsByDate();
+            admin1 = new Admin();
+            adminSubscriptions1 = new AdminSubscriptions();
+            editSubscription1 = new EditSubscription();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -144,11 +147,35 @@
             checkVisitsByDate1.Size = new Size(1106, 756);
             checkVisitsByDate1.TabIndex = 14;
             // 
+            // admin1
+            // 
+            admin1.Location = new Point(0, 0);
+            admin1.Name = "admin1";
+            admin1.Size = new Size(1106, 756);
+            admin1.TabIndex = 15;
+            // 
+            // adminSubscriptions1
+            // 
+            adminSubscriptions1.Location = new Point(0, 0);
+            adminSubscriptions1.Name = "adminSubscriptions1";
+            adminSubscriptions1.Size = new Size(1106, 756);
+            adminSubscriptions1.TabIndex = 16;
+            // 
+            // editSubscription1
+            // 
+            editSubscription1.Location = new Point(0, 0);
+            editSubscription1.Name = "editSubscription1";
+            editSubscription1.Size = new Size(1106, 756);
+            editSubscription1.TabIndex = 17;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
+            Controls.Add(editSubscription1);
+            Controls.Add(adminSubscriptions1);
+            Controls.Add(admin1);
             Controls.Add(checkVisitsByDate1);
             Controls.Add(clientSearch1);
             Controls.Add(checkClientSubscriptions1);
@@ -185,5 +212,8 @@
         private CheckClientSubscriptions checkClientSubscriptions1;
         private ClientSearch clientSearch1;
         private CheckVisitsByDate checkVisitsByDate1;
+        private Admin admin1;
+        private AdminSubscriptions adminSubscriptions1;
+        private EditSubscription editSubscription1;
     }
 }

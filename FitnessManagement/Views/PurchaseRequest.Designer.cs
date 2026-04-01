@@ -69,6 +69,7 @@
             label1.Size = new Size(449, 125);
             label1.TabIndex = 26;
             label1.Text = "Nesh text ";
+            label1.Click += label1_Click;
             // 
             // label2
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnessManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -92,6 +93,22 @@ namespace FitnessManagement.Views
                 HideEverything();
                 checkVisitsByDate1.Show();
             }
+            if (control == "Admin")
+            {
+                HideEverything();
+                admin1.Show();
+            }
+            if (control == "AdminSubscriptions")
+            {
+                HideEverything();
+                adminSubscriptions1.Show();
+            }
+            if (control == "EditSubscription")
+            {
+                HideEverything();
+                editSubscription1.Show();
+            }
+
         }
         public void HideEverything()
         {
@@ -109,11 +126,19 @@ namespace FitnessManagement.Views
             checkClientSubscriptions1.Hide();
             clientSearch1.Hide();
             checkVisitsByDate1.Hide();
+            admin1.Hide();
+            adminSubscriptions1.Hide();
+            editSubscription1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)
         {
 
+        }
+        public void TransferDataToEdit(SubscriptionType type)
+        {
+            // Inside Form1, everything is private, so this will always work
+            this.editSubscription1.SetSubscriptionData(type);
         }
 
         private void employee1_Load(object sender, EventArgs e)
