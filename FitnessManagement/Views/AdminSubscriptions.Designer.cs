@@ -78,8 +78,9 @@
             button4.Name = "button4";
             button4.Size = new Size(109, 44);
             button4.TabIndex = 4;
-            button4.Text = "button4";
+            button4.Text = "Delete";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // AdminSubscriptions
             // 
@@ -93,6 +94,7 @@
             Name = "AdminSubscriptions";
             Size = new Size(1106, 756);
             Load += AdminSubscriptions_Load;
+            VisibleChanged += AdminSubscriptions_VisibleChanged;
             ResumeLayout(false);
         }
 

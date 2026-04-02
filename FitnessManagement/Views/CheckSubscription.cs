@@ -11,7 +11,8 @@ using System.Windows.Forms;
 
 namespace FitnessManagement.Views
 {
-    public partial class CheckSubscription : UserControl
+    public partial class 
+        CheckSubscription : UserControl
     {
         private UserServices _userServices;
         private SubscriptionServices _subscriptionServices;

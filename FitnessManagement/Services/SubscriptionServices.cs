@@ -218,6 +218,29 @@ namespace FitnessManagement.Services
 
             _db.SaveChanges();
         }
+        public bool DeleteSubscriptionType(int typeId)
+        {
+            try
+            {                var subType = _db.SubscriptionTypes
+                    .Include(t => t.SubscriptionTypeServices)
+                    .FirstOrDefault(t => t.Id == typeId);
 
+                if (subType == null) return false;
+
+                if (subType.SubscriptionTypeServices.Any())
+                {
+                    _db.SubscriptionTypeServices.RemoveRange(subType.SubscriptionTypeServices);
+                }
+
+                _db.SubscriptionTypes.Remove(subType);
+
+                _db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
