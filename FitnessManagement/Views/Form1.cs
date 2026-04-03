@@ -108,7 +108,11 @@ namespace FitnessManagement.Views
                 HideEverything();
                 editSubscription1.Show();
             }
-
+            if (control == "CreateSubscriptionType")
+            {
+                HideEverything();
+                createSubscriptionType1.Show();
+            }
         }
         public void HideEverything()
         {
@@ -129,6 +133,7 @@ namespace FitnessManagement.Views
             admin1.Hide();
             adminSubscriptions1.Hide();
             editSubscription1.Hide();
+            createSubscriptionType1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)

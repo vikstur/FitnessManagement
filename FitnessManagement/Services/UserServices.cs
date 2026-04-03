@@ -97,7 +97,7 @@ namespace FitnessManagement.Services
         public List<User> SearchClients(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
-                return new List<User>(); // ✅ return empty list instead
+                return new List<User>();
 
             var query = _db.Users
                 .Where(u => u.Role == "Client");

@@ -45,6 +45,7 @@
             admin1 = new Admin();
             adminSubscriptions1 = new AdminSubscriptions();
             editSubscription1 = new EditSubscription();
+            createSubscriptionType1 = new CreateSubscriptionType();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -168,11 +169,19 @@
             editSubscription1.Size = new Size(1106, 756);
             editSubscription1.TabIndex = 17;
             // 
+            // createSubscriptionType1
+            // 
+            createSubscriptionType1.Location = new Point(0, 0);
+            createSubscriptionType1.Name = "createSubscriptionType1";
+            createSubscriptionType1.Size = new Size(1106, 756);
+            createSubscriptionType1.TabIndex = 18;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
+            Controls.Add(createSubscriptionType1);
             Controls.Add(editSubscription1);
             Controls.Add(adminSubscriptions1);
             Controls.Add(admin1);
@@ -215,5 +224,6 @@
         private Admin admin1;
         private AdminSubscriptions adminSubscriptions1;
         private EditSubscription editSubscription1;
+        private CreateSubscriptionType createSubscriptionType1;
     }
 }

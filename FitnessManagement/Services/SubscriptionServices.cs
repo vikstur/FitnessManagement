@@ -73,7 +73,6 @@ namespace FitnessManagement.Services
             request.Status = "Approved";
             request.ProcessedAt = DateTime.Now;
 
-            // Get subscription type
             var type = _db.SubscriptionTypes
                 .FirstOrDefault(t => t.Id == request.TypeId);
 
@@ -154,7 +153,7 @@ namespace FitnessManagement.Services
                 }
 
                 result.Add($"Valid to: {subscription.EndDate}");
-                result.Add(""); // empty line for spacing
+                result.Add(""); 
             }
 
 
@@ -162,7 +161,6 @@ namespace FitnessManagement.Services
         }
         public List<SubscriptionType> GetAllSubscriptionTypes()
         {
-            // We include SubscriptionTypeServices and the actual Service names
             return _db.SubscriptionTypes
                 .Include(st => st.SubscriptionTypeServices)
                     .ThenInclude(sts => sts.Service)
@@ -193,16 +191,11 @@ namespace FitnessManagement.Services
 
             if (subType == null) return;
 
-            // 1. Update basic properties
             subType.Price = price;
             subType.DurationDays = duration;
             subType.Visits = visits;
 
-            // 2. Update Services (Remove old, add new)
-            // Clear existing links
             _db.SubscriptionTypeServices.RemoveRange(subType.SubscriptionTypeServices);
-
-            // Find the service IDs based on names provided
             var selectedServices = _db.Services
                 .Where(s => serviceNames.Contains(s.Name))
                 .ToList();
@@ -241,6 +234,35 @@ namespace FitnessManagement.Services
             {
                 return false;
             }
+        }
+        public void CreateNewSubscriptionType(string name, int duration, decimal price, int? visits, List<string> selectedServiceNames)
+        {
+            var newType = new SubscriptionType
+            {
+                Name = name,
+                DurationDays = duration,
+                Price = price,
+                Visits = visits,
+                CreatedAt = DateTime.Now
+            };
+
+            _db.SubscriptionTypes.Add(newType);
+            _db.SaveChanges(); 
+
+            var dbServices = _db.Services
+                .Where(s => selectedServiceNames.Contains(s.Name))
+                .ToList();
+
+            foreach (var service in dbServices)
+            {
+                _db.SubscriptionTypeServices.Add(new SubscriptionTypeService
+                {
+                    SubscriptionTypeId = newType.Id,
+                    ServiceId = service.Id
+                });
+            }
+
+            _db.SaveChanges();
         }
     }
 }
