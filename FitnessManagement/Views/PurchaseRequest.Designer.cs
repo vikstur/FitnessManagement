@@ -64,41 +64,46 @@
             // 
             // label1
             // 
-            label1.Location = new Point(350, 16);
+            label1.Font = new Font("Stencil", 24F, FontStyle.Bold);
+            label1.Location = new Point(462, 68);
             label1.Name = "label1";
-            label1.Size = new Size(449, 125);
+            label1.Size = new Size(214, 52);
             label1.TabIndex = 26;
-            label1.Text = "Nesh text ";
+            label1.Text = "Purchase";
+            label1.TextAlign = ContentAlignment.TopCenter;
             label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.BackColor = SystemColors.Control;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(359, 260);
+            label2.BorderStyle = BorderStyle.Fixed3D;
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label2.Location = new Point(338, 259);
             label2.Name = "label2";
-            label2.Size = new Size(62, 23);
+            label2.Size = new Size(83, 23);
             label2.TabIndex = 0;
-            label2.Text = "Price";
+            label2.Text = "Price:";
             label2.Click += label2_Click_1;
             // 
             // label3
             // 
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(359, 333);
+            label3.BorderStyle = BorderStyle.Fixed3D;
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label3.Location = new Point(338, 332);
             label3.Name = "label3";
-            label3.Size = new Size(62, 25);
+            label3.Size = new Size(83, 25);
             label3.TabIndex = 0;
-            label3.Text = "Duration";
+            label3.Text = "Duration:";
             // 
             // label4
             // 
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label4.Location = new Point(359, 415);
+            label4.BorderStyle = BorderStyle.Fixed3D;
+            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label4.Location = new Point(338, 414);
             label4.Name = "label4";
-            label4.Size = new Size(73, 22);
+            label4.Size = new Size(83, 22);
             label4.TabIndex = 27;
-            label4.Text = "Services";
+            label4.Text = "Services:";
             // 
             // label5
             // 
@@ -140,12 +145,13 @@
             // 
             // label8
             // 
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label8.Location = new Point(359, 487);
+            label8.BorderStyle = BorderStyle.Fixed3D;
+            label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label8.Location = new Point(338, 486);
             label8.Name = "label8";
-            label8.Size = new Size(62, 23);
+            label8.Size = new Size(83, 23);
             label8.TabIndex = 32;
-            label8.Text = "Visits";
+            label8.Text = "Visits:";
             // 
             // label9
             // 

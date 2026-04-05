@@ -37,7 +37,7 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(310, 210);
+            listBox1.Location = new Point(325, 210);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(432, 349);
             listBox1.TabIndex = 0;
@@ -45,6 +45,7 @@
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(103, 38);
@@ -56,10 +57,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Emoji", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(242, 138);
+            label1.Font = new Font("Stencil", 24F, FontStyle.Bold);
+            label1.Location = new Point(159, 115);
             label1.Name = "label1";
-            label1.Size = new Size(573, 36);
+            label1.Size = new Size(835, 38);
             label1.TabIndex = 2;
             label1.Text = "Here you can check your active subscription";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -67,10 +68,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Emoji", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(310, 138);
+            label2.Font = new Font("Stencil", 24F, FontStyle.Bold);
+            label2.Location = new Point(227, 115);
             label2.Name = "label2";
-            label2.Size = new Size(432, 36);
+            label2.Size = new Size(618, 38);
             label2.TabIndex = 3;
             label2.Text = "You have no active subscriptions";
             // 

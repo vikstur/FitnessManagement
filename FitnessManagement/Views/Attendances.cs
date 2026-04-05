@@ -71,5 +71,11 @@ namespace FitnessManagement.Views
 
             MessageBox.Show("Attendance recorded!");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("Employee");
+        }
     }
 }

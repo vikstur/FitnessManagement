@@ -1,11 +1,12 @@
-﻿using System;
+﻿using FitnessManagement.Core;
+using FitnessManagement.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using FitnessManagement.Services;
 
 
 namespace FitnessManagement.Views
@@ -82,6 +83,27 @@ namespace FitnessManagement.Views
             else
             {
                 return;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Employee_Load(object sender, EventArgs e)
+        {
+            if (UserSession.IsLoggedIn)
+            {
+                label1.Text =
+                    "Welcome back to work " + UserSession.CurrentUser.FirstName;
+                label1.Parent = pictureBox1;
+                label1.BackColor = Color.Transparent;
             }
         }
     }

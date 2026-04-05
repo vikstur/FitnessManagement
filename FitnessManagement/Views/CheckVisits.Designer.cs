@@ -43,7 +43,7 @@
             // 
             // label1
             // 
-            label1.Font = new Font("Showcard Gothic", 15.75F, FontStyle.Bold);
+            label1.Font = new Font("Stencil", 24F, FontStyle.Bold);
             label1.Location = new Point(342, 35);
             label1.Name = "label1";
             label1.Size = new Size(437, 88);
@@ -54,6 +54,7 @@
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(87, 39);

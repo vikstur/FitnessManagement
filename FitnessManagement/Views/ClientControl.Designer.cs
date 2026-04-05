@@ -55,11 +55,12 @@
             // 
             // button2
             // 
-            button2.Location = new Point(1028, 3);
+            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            button2.Location = new Point(1007, 3);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(96, 31);
             button2.TabIndex = 1;
-            button2.Text = "Log out";
+            button2.Text = "Logout";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -76,7 +77,7 @@
             // 
             // label1
             // 
-            label1.Font = new Font("Showcard Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Stencil", 20.25F, FontStyle.Bold);
             label1.Location = new Point(352, 168);
             label1.Name = "label1";
             label1.Size = new Size(403, 143);
@@ -87,6 +88,7 @@
             // 
             // button3
             // 
+            button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button3.Location = new Point(352, 314);
             button3.Name = "button3";
             button3.Size = new Size(403, 49);
@@ -97,6 +99,7 @@
             // 
             // button4
             // 
+            button4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button4.Location = new Point(119, 4);
             button4.Name = "button4";
             button4.Size = new Size(120, 42);
@@ -107,11 +110,12 @@
             // 
             // button5
             // 
+            button5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button5.Location = new Point(257, 4);
             button5.Name = "button5";
             button5.Size = new Size(120, 42);
             button5.TabIndex = 6;
-            button5.Text = "CheckVisits";
+            button5.Text = "Check visits";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 

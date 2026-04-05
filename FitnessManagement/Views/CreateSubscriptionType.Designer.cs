@@ -46,6 +46,7 @@
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(87, 44);
@@ -83,7 +84,7 @@
             // 
             // label4
             // 
-            label4.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label4.Font = new Font("Stencil", 24F, FontStyle.Bold);
             label4.Location = new Point(194, 66);
             label4.Name = "label4";
             label4.Size = new Size(743, 65);
@@ -115,9 +116,10 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             checkBox1.Location = new Point(338, 394);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(62, 19);
+            checkBox1.Size = new Size(70, 21);
             checkBox1.TabIndex = 8;
             checkBox1.Text = "Fitness";
             checkBox1.UseVisualStyleBackColor = true;
@@ -125,9 +127,10 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
+            checkBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             checkBox2.Location = new Point(492, 394);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(46, 19);
+            checkBox2.Size = new Size(50, 21);
             checkBox2.TabIndex = 9;
             checkBox2.Text = "SPA";
             checkBox2.UseVisualStyleBackColor = true;
@@ -135,9 +138,10 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
+            checkBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             checkBox3.Location = new Point(616, 394);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(110, 19);
+            checkBox3.Size = new Size(124, 21);
             checkBox3.TabIndex = 10;
             checkBox3.Text = "Swimming pool";
             checkBox3.UseVisualStyleBackColor = true;

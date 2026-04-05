@@ -31,10 +31,12 @@
             button1 = new Button();
             comboBox1 = new ComboBox();
             listBox1 = new ListBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(94, 43);
@@ -60,10 +62,21 @@
             listBox1.Size = new Size(494, 424);
             listBox1.TabIndex = 2;
             // 
+            // label1
+            // 
+            label1.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(326, 48);
+            label1.Name = "label1";
+            label1.Size = new Size(494, 70);
+            label1.TabIndex = 3;
+            label1.Text = "Ckeck client subscriptions";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
             // CheckClientSubscriptions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
             Controls.Add(listBox1);
             Controls.Add(comboBox1);
             Controls.Add(button1);
@@ -78,5 +91,6 @@
         private Button button1;
         private ComboBox comboBox1;
         private ListBox listBox1;
+        private Label label1;
     }
 }

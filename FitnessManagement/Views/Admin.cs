@@ -59,5 +59,11 @@ namespace FitnessManagement.Views
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("CreateSubscriptionType");
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("CheckVisitsByPeriod");
+        }
     }
 }

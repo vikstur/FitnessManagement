@@ -28,5 +28,23 @@ namespace FitnessManagement.Services
 
             return visits;
         }
+        public List<VisitsView> GetVisitsByPeriod(DateTime startDate, DateTime endDate)
+        {
+            DateTime endOfDay = endDate.Date.AddDays(1).AddTicks(-1);
+
+            var visits = _db.Attendances
+                .Where(a => a.CheckInTime >= startDate.Date && a.CheckInTime <= endOfDay)
+                .Select(a => new VisitsView
+                {
+                    ClientName = a.Client.FirstName + " " + a.Client.LastName,
+                    SubscriptionType = a.Subscription.Type.Name,
+                    CheckInTime = a.CheckInTime
+                })
+                .OrderByDescending(a => a.CheckInTime) // Optional: shows newest visits first
+                .ToList();
+
+            return visits;
+        }
     }
+
 }

@@ -44,9 +44,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(809, 655);
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            button1.Location = new Point(829, 655);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(75, 31);
             button1.TabIndex = 1;
             button1.Text = "Accept";
             button1.UseVisualStyleBackColor = true;
@@ -54,9 +55,10 @@
             // 
             // button2
             // 
+            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button2.Location = new Point(932, 655);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(75, 31);
             button2.TabIndex = 2;
             button2.Text = "Reject";
             button2.UseVisualStyleBackColor = true;
@@ -64,11 +66,12 @@
             // 
             // button3
             // 
+            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button3.Location = new Point(0, 0);
             button3.Name = "button3";
             button3.Size = new Size(76, 36);
             button3.TabIndex = 3;
-            button3.Text = "back";
+            button3.Text = "Back";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 

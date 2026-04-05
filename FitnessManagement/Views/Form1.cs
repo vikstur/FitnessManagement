@@ -93,25 +93,30 @@ namespace FitnessManagement.Views
                 HideEverything();
                 checkVisitsByDate1.Show();
             }
-            if (control == "Admin")
+            else if (control == "Admin")
             {
                 HideEverything();
                 admin1.Show();
             }
-            if (control == "AdminSubscriptions")
+            else if (control == "AdminSubscriptions")
             {
                 HideEverything();
                 adminSubscriptions1.Show();
             }
-            if (control == "EditSubscription")
+            else if (control == "EditSubscription")
             {
                 HideEverything();
                 editSubscription1.Show();
             }
-            if (control == "CreateSubscriptionType")
+            else if (control == "CreateSubscriptionType")
             {
                 HideEverything();
                 createSubscriptionType1.Show();
+            }
+            else if (control == "CheckVisitsByPeriod")
+            {
+                HideEverything();
+                checkVisitsByPeriod1.Show();
             }
         }
         public void HideEverything()
@@ -134,6 +139,7 @@ namespace FitnessManagement.Views
             adminSubscriptions1.Hide();
             editSubscription1.Hide();
             createSubscriptionType1.Hide();
+            checkVisitsByPeriod1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)

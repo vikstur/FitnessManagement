@@ -38,6 +38,7 @@
             label4 = new Label();
             button1 = new Button();
             button2 = new Button();
+            label5 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -70,38 +71,47 @@
             // 
             // label1
             // 
+            label1.BorderStyle = BorderStyle.Fixed3D;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label1.Location = new Point(345, 224);
             label1.Name = "label1";
             label1.Size = new Size(100, 23);
             label1.TabIndex = 4;
-            label1.Text = "Price";
+            label1.Text = "Price:";
             // 
             // label2
             // 
+            label2.BorderStyle = BorderStyle.Fixed3D;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label2.Location = new Point(345, 302);
             label2.Name = "label2";
             label2.Size = new Size(100, 23);
             label2.TabIndex = 5;
-            label2.Text = "Duration";
+            label2.Text = "Duration:";
             // 
             // label3
             // 
+            label3.BorderStyle = BorderStyle.Fixed3D;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label3.Location = new Point(345, 387);
             label3.Name = "label3";
             label3.Size = new Size(100, 23);
             label3.TabIndex = 6;
-            label3.Text = "Services";
+            label3.Text = "Services:";
             // 
             // label4
             // 
+            label4.BorderStyle = BorderStyle.Fixed3D;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             label4.Location = new Point(345, 468);
             label4.Name = "label4";
             label4.Size = new Size(100, 23);
             label4.TabIndex = 7;
-            label4.Text = "Visits";
+            label4.Text = "Visits:";
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(86, 42);
@@ -112,7 +122,8 @@
             // 
             // button2
             // 
-            button2.Location = new Point(544, 533);
+            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            button2.Location = new Point(498, 530);
             button2.Name = "button2";
             button2.Size = new Size(112, 45);
             button2.TabIndex = 9;
@@ -120,10 +131,21 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // label5
+            // 
+            label5.Font = new Font("Stencil", 24F, FontStyle.Bold);
+            label5.Location = new Point(259, 92);
+            label5.Name = "label5";
+            label5.Size = new Size(569, 61);
+            label5.TabIndex = 10;
+            label5.Text = "Create subscription type";
+            label5.TextAlign = ContentAlignment.TopCenter;
+            // 
             // EditSubscription
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label5);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label4);
@@ -153,5 +175,6 @@
         private Label label4;
         private Button button1;
         private Button button2;
+        private Label label5;
     }
 }

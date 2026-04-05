@@ -34,11 +34,13 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             button1.Location = new Point(1026, 0);
             button1.Name = "button1";
             button1.Size = new Size(80, 25);
@@ -72,6 +74,7 @@
             // 
             // button3
             // 
+            button3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             button3.Location = new Point(113, 0);
             button3.Name = "button3";
             button3.Size = new Size(150, 44);
@@ -82,6 +85,7 @@
             // 
             // button4
             // 
+            button4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             button4.Location = new Point(307, 0);
             button4.Name = "button4";
             button4.Size = new Size(150, 44);
@@ -90,10 +94,22 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // button5
+            // 
+            button5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            button5.Location = new Point(492, 0);
+            button5.Name = "button5";
+            button5.Size = new Size(150, 44);
+            button5.TabIndex = 5;
+            button5.Text = "Check visits by period";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -112,5 +128,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }

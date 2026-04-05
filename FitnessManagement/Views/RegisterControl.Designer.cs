@@ -58,60 +58,67 @@
             // 
             // label1
             // 
-            label1.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Bold);
-            label1.Location = new Point(401, 77);
+            label1.Font = new Font("Stencil", 24F, FontStyle.Bold);
+            label1.Location = new Point(401, 81);
             label1.Name = "label1";
             label1.Size = new Size(295, 47);
             label1.TabIndex = 1;
             label1.Text = "Registration";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // label2
             // 
+            label2.BorderStyle = BorderStyle.Fixed3D;
             label2.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold);
-            label2.Location = new Point(281, 166);
+            label2.Location = new Point(273, 166);
             label2.Name = "label2";
-            label2.Size = new Size(100, 30);
+            label2.Size = new Size(122, 30);
             label2.TabIndex = 2;
             label2.Text = "Name:";
             // 
             // label3
             // 
+            label3.BorderStyle = BorderStyle.Fixed3D;
             label3.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold);
-            label3.Location = new Point(281, 236);
+            label3.Location = new Point(273, 236);
             label3.Name = "label3";
-            label3.Size = new Size(146, 30);
+            label3.Size = new Size(122, 30);
             label3.TabIndex = 3;
             label3.Text = "Last Name:";
             // 
             // label4
             // 
+            label4.BorderStyle = BorderStyle.Fixed3D;
             label4.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold);
-            label4.Location = new Point(281, 297);
+            label4.Location = new Point(273, 297);
             label4.Name = "label4";
-            label4.Size = new Size(100, 23);
+            label4.Size = new Size(122, 30);
             label4.TabIndex = 4;
             label4.Text = "Email:";
             // 
             // label5
             // 
+            label5.BorderStyle = BorderStyle.Fixed3D;
             label5.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold);
-            label5.Location = new Point(281, 362);
+            label5.Location = new Point(273, 362);
             label5.Name = "label5";
-            label5.Size = new Size(114, 50);
+            label5.Size = new Size(122, 30);
             label5.TabIndex = 5;
             label5.Text = "Password:";
             // 
             // label6
             // 
+            label6.BorderStyle = BorderStyle.Fixed3D;
             label6.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold);
-            label6.Location = new Point(281, 446);
+            label6.Location = new Point(273, 439);
             label6.Name = "label6";
-            label6.Size = new Size(100, 23);
+            label6.Size = new Size(122, 30);
             label6.TabIndex = 6;
             label6.Text = "Phone:";
             // 
             // button2
             // 
+            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button2.Location = new Point(401, 517);
             button2.Name = "button2";
             button2.Size = new Size(98, 33);
@@ -122,6 +129,7 @@
             // 
             // button3
             // 
+            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button3.Location = new Point(598, 517);
             button3.Name = "button3";
             button3.Size = new Size(98, 33);
