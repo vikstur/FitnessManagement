@@ -264,5 +264,73 @@ namespace FitnessManagement.Services
 
             _db.SaveChanges();
         }
+        public List<string> GetAllActiveSubscriptions()
+        {
+            var activeSubs = _db.Subscriptions
+                .Include(s => s.Client)
+                .Include(s => s.Type)
+                .Where(s => s.Status == "Active")
+                .ToList();
+
+            var results = new List<string>();
+
+            foreach (var sub in activeSubs)
+            {
+                string info = $"{sub.Client.FirstName} {sub.Client.LastName} - {sub.Type.Name} (Ends: {sub.EndDate:dd/MM/yyyy})";
+                results.Add(info);
+            }
+
+            return results;
+        }
+        public List<string> GetAllExpiredSubscriptions()
+        {
+            var expiredSubs = _db.Subscriptions
+                .Include(s => s.Client)
+                .Include(s => s.Type)
+                .Where(s => s.Status == "Expired")
+                .OrderByDescending(s => s.EndDate) 
+                .ToList();
+
+            var results = new List<string>();
+
+            foreach (var sub in expiredSubs)
+            {
+                results.Add($"{sub.Client.FirstName} {sub.Client.LastName} - {sub.Type.Name} (Expired on: {sub.EndDate:dd/MM/yyyy})");
+            }
+
+            return results;
+        }
+        public bool CancelSubscriptionByInfo(string listBoxItem)
+        {
+            try
+            {
+
+                string[] parts = listBoxItem.Split(new string[] { " - ", " (Ends: ", ")" }, StringSplitOptions.RemoveEmptyEntries);
+
+                if (parts.Length < 3) return false;
+
+                string fullName = parts[0];
+                string typeName = parts[1];
+                DateOnly endDate = DateOnly.ParseExact(parts[2], "dd/MM/yyyy");
+                var subscription = _db.Subscriptions
+                    .FirstOrDefault(s =>
+                        (s.Client.FirstName + " " + s.Client.LastName) == fullName &&
+                        s.Type.Name == typeName &&
+                        s.EndDate == endDate &&
+                        s.Status == "Active");
+
+                if (subscription != null)
+                {
+                    subscription.Status = "Canceled";
+                    _db.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

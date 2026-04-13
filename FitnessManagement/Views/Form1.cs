@@ -56,7 +56,7 @@ namespace FitnessManagement.Views
             else if (control == "Requests")
             {
                 HideEverything();
-                requests2.Show();
+                requests3.Show();
             }
             else if (control == "CheckSubscriptions")
             {
@@ -118,6 +118,11 @@ namespace FitnessManagement.Views
                 HideEverything();
                 checkVisitsByPeriod1.Show();
             }
+            else if (control == "AdminActiveSubscriptions")
+            {
+                HideEverything();
+                adminActiveSubscriptions1.Show();
+            }
         }
         public void HideEverything()
         {
@@ -127,7 +132,7 @@ namespace FitnessManagement.Views
             clientControl1.Hide();
             loginControl1.Hide();
             purchaseRequest1.Hide();
-            requests2.Hide();
+            requests3.Hide();
             checkSubscription1.Hide();
             employee1.Hide();
             attendances1.Hide();
@@ -140,6 +145,7 @@ namespace FitnessManagement.Views
             editSubscription1.Hide();
             createSubscriptionType1.Hide();
             checkVisitsByPeriod1.Hide();
+            adminActiveSubscriptions1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)

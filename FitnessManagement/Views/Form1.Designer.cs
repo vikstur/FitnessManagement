@@ -34,7 +34,6 @@
             registerControl1 = new RegisterControl();
             clientControl1 = new ClientControl();
             purchaseRequest1 = new PurchaseRequest();
-            requests2 = new Requests();
             checkSubscription1 = new CheckSubscription();
             employee1 = new Employee();
             attendances1 = new Attendances();
@@ -47,6 +46,8 @@
             editSubscription1 = new EditSubscription();
             createSubscriptionType1 = new CreateSubscriptionType();
             checkVisitsByPeriod1 = new CheckVisitsByPeriod();
+            adminActiveSubscriptions1 = new AdminSubscriptionsCheck();
+            requests3 = new Requests();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -91,13 +92,6 @@
             purchaseRequest1.Size = new Size(1106, 756);
             purchaseRequest1.TabIndex = 5;
             purchaseRequest1.Load += purchaseRequest1_Load;
-            // 
-            // requests2
-            // 
-            requests2.Location = new Point(0, 0);
-            requests2.Name = "requests2";
-            requests2.Size = new Size(1106, 756);
-            requests2.TabIndex = 6;
             // 
             // checkSubscription1
             // 
@@ -184,11 +178,27 @@
             checkVisitsByPeriod1.Size = new Size(1106, 756);
             checkVisitsByPeriod1.TabIndex = 19;
             // 
+            // adminActiveSubscriptions1
+            // 
+            adminActiveSubscriptions1.Location = new Point(0, 0);
+            adminActiveSubscriptions1.Name = "adminActiveSubscriptions1";
+            adminActiveSubscriptions1.Size = new Size(1106, 756);
+            adminActiveSubscriptions1.TabIndex = 20;
+            // 
+            // requests3
+            // 
+            requests3.Location = new Point(0, 0);
+            requests3.Name = "requests3";
+            requests3.Size = new Size(1106, 756);
+            requests3.TabIndex = 21;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
+            Controls.Add(requests3);
+            Controls.Add(adminActiveSubscriptions1);
             Controls.Add(checkVisitsByPeriod1);
             Controls.Add(createSubscriptionType1);
             Controls.Add(editSubscription1);
@@ -202,7 +212,6 @@
             Controls.Add(attendances1);
             Controls.Add(employee1);
             Controls.Add(checkSubscription1);
-            Controls.Add(requests2);
             Controls.Add(purchaseRequest1);
             Controls.Add(registerControl1);
             Controls.Add(loginControl1);
@@ -235,5 +244,7 @@
         private EditSubscription editSubscription1;
         private CreateSubscriptionType createSubscriptionType1;
         private CheckVisitsByPeriod checkVisitsByPeriod1;
+        private AdminSubscriptionsCheck adminActiveSubscriptions1;
+        private Requests requests3;
     }
 }
