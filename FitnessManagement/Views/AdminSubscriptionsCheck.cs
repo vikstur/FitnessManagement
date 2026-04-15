@@ -125,5 +125,22 @@ namespace FitnessManagement.Views
                 }
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            var usageList = _subscriptionServices.GetSubscriptionsByUsage();
+
+            if (usageList.Count == 0)
+            {
+                listBox1.Items.Add("No active subscriptions with visits found.");
+                return;
+            }
+
+            foreach (var item in usageList)
+            {
+                listBox1.Items.Add(item);
+            }
+        }
     }
 }

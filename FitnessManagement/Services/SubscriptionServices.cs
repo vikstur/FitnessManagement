@@ -332,5 +332,28 @@ namespace FitnessManagement.Services
                 return false;
             }
         }
+        public List<string> GetSubscriptionsByUsage()
+        {
+            var subs = _db.Subscriptions
+                .Include(s => s.Client)
+                .Include(s => s.Type)
+                .Include(s => s.Attendances)
+                .Where(s => s.Status == "Active")
+                .ToList();
+
+            var sortedSubs = subs
+                .OrderByDescending(s => s.Attendances.Count)
+                .ToList();
+
+            var results = new List<string>();
+
+            foreach (var sub in sortedSubs)
+            {
+                string info = $"{sub.Client.FirstName} {sub.Client.LastName} - {sub.Type.Name} (Ends: {sub.EndDate:dd/MM/yyyy}) - Visits: {sub.Attendances.Count}";
+                results.Add(info);
+            }
+
+            return results;
+        }
     }
 }
