@@ -1,6 +1,6 @@
 ﻿namespace FitnessManagement.Views
 {
-    partial class CheckClientSubscriptions
+    partial class UserEdit
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,70 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            comboBox1 = new ComboBox();
             listBox1 = new ListBox();
-            label1 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(236, 90);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(619, 604);
+            listBox1.TabIndex = 0;
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
-            button1.Size = new Size(94, 43);
-            button1.TabIndex = 0;
+            button1.Size = new Size(88, 41);
+            button1.TabIndex = 1;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // comboBox1
+            // button2
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(326, 157);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(494, 23);
-            comboBox1.TabIndex = 1;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            button2.Location = new Point(575, 649);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 32);
+            button2.TabIndex = 2;
+            button2.Text = "Change name";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += this.button2_Click;
             // 
-            // listBox1
+            // button3
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(326, 206);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(494, 424);
-            listBox1.TabIndex = 2;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            button3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            button3.Location = new Point(724, 649);
+            button3.Name = "button3";
+            button3.Size = new Size(118, 32);
+            button3.TabIndex = 3;
+            button3.Text = "Change role";
+            button3.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            label1.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(326, 48);
-            label1.Name = "label1";
-            label1.Size = new Size(494, 70);
-            label1.TabIndex = 3;
-            label1.Text = "Ckeck client subscriptions";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // CheckClientSubscriptions
+            // UserEdit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
-            Controls.Add(listBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(button1);
-            Name = "CheckClientSubscriptions";
+            Controls.Add(listBox1);
+            Name = "UserEdit";
             Size = new Size(1106, 756);
-            Load += CheckClientSubscriptions_Load;
+            Load += ClientEdit_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
-        private ComboBox comboBox1;
         private ListBox listBox1;
-        private Label label1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }

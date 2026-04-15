@@ -55,5 +55,10 @@ namespace FitnessManagement.Views
 
             listBox1.DataSource = subs;
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

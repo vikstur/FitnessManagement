@@ -123,6 +123,16 @@ namespace FitnessManagement.Views
                 HideEverything();
                 adminActiveSubscriptions1.Show();
             }
+            else if (control == "UserEdit")
+            {
+                HideEverything();
+                clientEdit1.Show();
+            }
+            else if (control == "UserNameEdit")
+            {
+                HideEverything();
+                userNameEdit1.Show();
+            }
         }
         public void HideEverything()
         {
@@ -146,6 +156,8 @@ namespace FitnessManagement.Views
             createSubscriptionType1.Hide();
             checkVisitsByPeriod1.Hide();
             adminActiveSubscriptions1.Hide();
+            clientEdit1.Hide();
+            userNameEdit1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)
@@ -154,10 +166,13 @@ namespace FitnessManagement.Views
         }
         public void TransferDataToEdit(SubscriptionType type)
         {
-            // Inside Form1, everything is private, so this will always work
             this.editSubscription1.SetSubscriptionData(type);
         }
-
+        public void TransferToEditName(string name)
+        {
+            this.userNameEdit1.SetTargetPerson(name);
+            this.Change("UserNameEdit");
+        }
         private void employee1_Load(object sender, EventArgs e)
         {
 

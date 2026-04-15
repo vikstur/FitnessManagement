@@ -48,6 +48,8 @@
             checkVisitsByPeriod1 = new CheckVisitsByPeriod();
             adminActiveSubscriptions1 = new AdminSubscriptionsCheck();
             requests3 = new Requests();
+            clientEdit1 = new UserEdit();
+            userNameEdit1 = new UserNameEdit();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -192,11 +194,27 @@
             requests3.Size = new Size(1106, 756);
             requests3.TabIndex = 21;
             // 
+            // clientEdit1
+            // 
+            clientEdit1.Location = new Point(0, 0);
+            clientEdit1.Name = "clientEdit1";
+            clientEdit1.Size = new Size(1106, 756);
+            clientEdit1.TabIndex = 22;
+            // 
+            // userNameEdit1
+            // 
+            userNameEdit1.Location = new Point(0, 0);
+            userNameEdit1.Name = "userNameEdit1";
+            userNameEdit1.Size = new Size(1106, 756);
+            userNameEdit1.TabIndex = 23;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
+            Controls.Add(userNameEdit1);
+            Controls.Add(clientEdit1);
             Controls.Add(requests3);
             Controls.Add(adminActiveSubscriptions1);
             Controls.Add(checkVisitsByPeriod1);
@@ -246,5 +264,7 @@
         private CheckVisitsByPeriod checkVisitsByPeriod1;
         private AdminSubscriptionsCheck adminActiveSubscriptions1;
         private Requests requests3;
+        private UserEdit clientEdit1;
+        private UserNameEdit userNameEdit1;
     }
 }

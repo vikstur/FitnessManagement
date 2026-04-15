@@ -123,5 +123,26 @@ namespace FitnessManagement.Services
 
             return query.ToList();
         }
+        public List<User> GetAllUsers()
+        {
+            return _db.Users
+                .Where(u => u.Role == "Client"||u.Role=="Employee")
+                .ToList();
+        }
+        public bool UpdatePersonName(string oldFullName, string newFirst, string newLast)
+        {
+            var person = _db.Users.AsEnumerable().FirstOrDefault(u =>
+                (u.FirstName.Trim() + " " + u.LastName.Trim())
+                .Equals(oldFullName.Trim(), StringComparison.OrdinalIgnoreCase));
+
+            if (person != null)
+            {
+                person.FirstName = newFirst;
+                person.LastName = newLast;
+                _db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

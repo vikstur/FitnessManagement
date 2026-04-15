@@ -36,6 +36,8 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
+            button7 = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -113,14 +115,37 @@
             button6.Name = "button6";
             button6.Size = new Size(150, 45);
             button6.TabIndex = 6;
-            button6.Text = "Check  subscriptions";
+            button6.Text = "Check subscriptions";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            button7.Location = new Point(786, 0);
+            button7.Name = "button7";
+            button7.Size = new Size(150, 45);
+            button7.TabIndex = 7;
+            button7.Text = "Users";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Stencil", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(366, 188);
+            label1.Name = "label1";
+            label1.Size = new Size(375, 39);
+            label1.TabIndex = 8;
+            label1.Text = "Welcome back, boss";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
+            Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -130,6 +155,7 @@
             Controls.Add(pictureBox1);
             Name = "Admin";
             Size = new Size(1106, 756);
+            Load += Admin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -143,5 +169,7 @@
         private Button button4;
         private Button button5;
         private Button button6;
+        private Button button7;
+        private Label label1;
     }
 }

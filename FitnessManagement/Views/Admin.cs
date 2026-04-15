@@ -71,5 +71,17 @@ namespace FitnessManagement.Views
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("AdminActiveSubscriptions");
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("UserEdit");
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            label1.Parent = pictureBox1;
+            label1.BackColor = Color.Transparent;
+        }
     }
 }
