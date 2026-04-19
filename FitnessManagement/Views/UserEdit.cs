@@ -33,7 +33,7 @@ namespace FitnessManagement.Views
         }
         private void button2_Click(object sender, EventArgs e)
         {
-    if (listBox1.SelectedItem is User selectedUser)
+            if (listBox1.SelectedItem is User selectedUser)
             {
                 string nameToPass = selectedUser.FullName;
                 Form1 mainForm = (Form1)this.FindForm();
@@ -44,6 +44,12 @@ namespace FitnessManagement.Views
             {
                 MessageBox.Show("Please select a user from the list first.");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = (Form1)this.FindForm();
+            mainForm.Change("ChangeRole");
         }
     }
 }

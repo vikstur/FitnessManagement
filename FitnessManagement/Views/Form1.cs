@@ -133,6 +133,11 @@ namespace FitnessManagement.Views
                 HideEverything();
                 userNameEdit1.Show();
             }
+            else if (control == "ChangeRole")
+            {
+                HideEverything();
+                changeRole1.Show();
+            }
         }
         public void HideEverything()
         {
@@ -158,6 +163,7 @@ namespace FitnessManagement.Views
             adminActiveSubscriptions1.Hide();
             clientEdit1.Hide();
             userNameEdit1.Hide();
+            changeRole1.Hide();
         }
 
         private void purchaseRequest1_Load(object sender, EventArgs e)

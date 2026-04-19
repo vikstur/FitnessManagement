@@ -30,7 +30,8 @@ namespace FitnessManagement
         private void button2_Click(object sender, EventArgs e)
         {
             Form1 mainForm = (Form1)this.FindForm();
-            if (textBox1.Text == "" || textBox2.Text == "")
+
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
             {
                 MessageBox.Show("Please fill all the required fields");
                 return;
@@ -40,18 +41,7 @@ namespace FitnessManagement
             string password = textBox2.Text.Trim();
 
             _userServices.LoginUser(email, password);
-            if (UserSession.CurrentUser.Role=="Employee")
-            {
-                
-                mainForm.Change("Employee");
-                return;
-            }
-            if (UserSession.CurrentUser.Role == "Admin")
-            {
 
-                mainForm.Change("Admin");
-                return;
-            }
             if (UserSession.CurrentUser == null)
             {
                 textBox1.Clear();
@@ -59,8 +49,18 @@ namespace FitnessManagement
                 return;
             }
 
-           
-            mainForm.Change("Client");
+            if (UserSession.CurrentUser.Role == "Employee")
+            {
+                mainForm.Change("Employee");
+            }
+            else if (UserSession.CurrentUser.Role == "Admin")
+            {
+                mainForm.Change("Admin");
+            }
+            else
+            {
+                mainForm.Change("Client");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

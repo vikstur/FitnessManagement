@@ -50,6 +50,7 @@
             requests3 = new Requests();
             clientEdit1 = new UserEdit();
             userNameEdit1 = new UserNameEdit();
+            changeRole1 = new ChangeRole();
             SuspendLayout();
             // 
             // aboutrGym1
@@ -208,11 +209,19 @@
             userNameEdit1.Size = new Size(1106, 756);
             userNameEdit1.TabIndex = 23;
             // 
+            // changeRole1
+            // 
+            changeRole1.Location = new Point(0, 0);
+            changeRole1.Name = "changeRole1";
+            changeRole1.Size = new Size(1106, 756);
+            changeRole1.TabIndex = 24;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 755);
+            Controls.Add(changeRole1);
             Controls.Add(userNameEdit1);
             Controls.Add(clientEdit1);
             Controls.Add(requests3);
@@ -266,5 +275,6 @@
         private Requests requests3;
         private UserEdit clientEdit1;
         private UserNameEdit userNameEdit1;
+        private ChangeRole changeRole1;
     }
 }

@@ -33,4 +33,6 @@ public partial class User
     public virtual ICollection<PurchaseRequest> PurchaseRequests { get; set; } = new List<PurchaseRequest>();
 
     public virtual ICollection<Subscription> Subscriptions { get; set; } = new List<Subscription>();
+
+    public string FullNameWithRole => $"{FirstName} {LastName} ({Role})";
 }

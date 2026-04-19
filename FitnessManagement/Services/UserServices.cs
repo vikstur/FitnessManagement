@@ -144,5 +144,16 @@ namespace FitnessManagement.Services
             }
             return false;
         }
+        public bool UpdateUserRole(int userId, string newRole)
+        {
+            var user = _db.Users.FirstOrDefault(u => u.Id == userId);
+            if (user != null)
+            {
+                user.Role = newRole;
+                _db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }
