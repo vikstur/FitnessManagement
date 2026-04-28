@@ -86,7 +86,7 @@ namespace FitnessManagement.Views
 
         private void AdminSubscriptions_VisibleChanged(object sender, EventArgs e)
         {
-
+  
         }
     }
 }

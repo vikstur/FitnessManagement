@@ -38,10 +38,11 @@
             // 
             // comboBox1
             // 
+            comboBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(395, 276);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(300, 23);
+            comboBox1.Size = new Size(300, 33);
             comboBox1.TabIndex = 0;
             // 
             // button1
@@ -62,7 +63,7 @@
             button3.Name = "button3";
             button3.Size = new Size(133, 44);
             button3.TabIndex = 3;
-            button3.Text = "edit";
+            button3.Text = "Edit";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 

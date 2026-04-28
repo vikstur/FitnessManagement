@@ -36,10 +36,11 @@
             // 
             // listBox1
             // 
+            listBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(325, 210);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(432, 349);
+            listBox1.Size = new Size(432, 329);
             listBox1.TabIndex = 0;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 

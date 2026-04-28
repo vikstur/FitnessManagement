@@ -25,14 +25,12 @@ namespace FitnessManagement.Views
 
         public void SetSubscriptionData(SubscriptionType type)
         {
+       
             _currentType = type;
-
-            // Fill the textboxes with the data from the object
             textBox1.Text = type.Price.ToString("F2");
             textBox2.Text = type.DurationDays.ToString();
             textBox4.Text = type.Visits?.ToString() ?? "";
 
-            // Show the current services
             var serviceNames = type.SubscriptionTypeServices
                 .Select(sts => sts.Service.Name);
             textBox3.Text = string.Join(", ", serviceNames);
@@ -48,24 +46,20 @@ namespace FitnessManagement.Views
         {
             try
             {
-                // Parse the inputs
                 decimal newPrice = decimal.Parse(textBox1.Text);
                 int newDuration = int.Parse(textBox2.Text);
                 int? newVisits = string.IsNullOrWhiteSpace(textBox4.Text) ? (int?)null : int.Parse(textBox4.Text);
 
-                // Split services by comma and trim whitespace
                 List<string> newServices = textBox3.Text
                     .Split(',')
                     .Select(s => s.Trim())
                     .Where(s => !string.IsNullOrEmpty(s))
                     .ToList();
 
-                // Call the service
                 _subscriptionServices.UpdateSubscriptionType(_currentType.Id, newPrice, newDuration, newVisits, newServices);
 
                 MessageBox.Show("Changes saved successfully!");
 
-                // Go back to the selection screen
                 Form1 mainForm = (Form1)this.FindForm();
                 mainForm.Change("AdminSubscriptions");
             }
@@ -79,6 +73,11 @@ namespace FitnessManagement.Views
         {
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("AdminSubscriptions");
+        }
+
+        private void EditSubscription_VisibleChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

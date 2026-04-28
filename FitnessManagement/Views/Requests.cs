@@ -56,5 +56,14 @@ namespace FitnessManagement.Views
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("Employee");
         }
+
+        private void Requests_VisibleChanged(object sender, EventArgs e)
+        {
+            var requests = _subscriptionServices.GetPendingRequests();
+
+            listBox1.DataSource = requests;
+            listBox1.DisplayMember = "Display";
+            listBox1.ValueMember = "Id";
+        }
     }
 }

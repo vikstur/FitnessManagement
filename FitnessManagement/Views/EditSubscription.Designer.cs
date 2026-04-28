@@ -138,7 +138,7 @@
             label5.Name = "label5";
             label5.Size = new Size(569, 61);
             label5.TabIndex = 10;
-            label5.Text = "Create subscription type";
+            label5.Text = "Edit subscription type";
             label5.TextAlign = ContentAlignment.TopCenter;
             // 
             // EditSubscription
@@ -159,6 +159,7 @@
             Name = "EditSubscription";
             Size = new Size(1106, 756);
             Load += EditSubscription_Load;
+            VisibleChanged += EditSubscription_VisibleChanged;
             ResumeLayout(false);
             PerformLayout();
         }

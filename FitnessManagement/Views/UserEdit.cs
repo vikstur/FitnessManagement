@@ -24,7 +24,7 @@ namespace FitnessManagement.Views
         {
             var users = _userServices.GetAllUsers();
             listBox1.DataSource = users;
-            listBox1.DisplayMember = "FullName";
+            listBox1.DisplayMember = "FullNameWithRole";
         }
         private void button1_Click(object sender, EventArgs e)
         {

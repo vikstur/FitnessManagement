@@ -245,7 +245,7 @@
             Controls.Add(aboutrGym1);
             Controls.Add(clientControl1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "RGym";
             ResumeLayout(false);
         }
 
@@ -267,7 +267,7 @@
         private ClientSearch clientSearch1;
         private CheckVisitsByDate checkVisitsByDate1;
         private Admin admin1;
-        private AdminSubscriptions adminSubscriptions1;
+        public AdminSubscriptions adminSubscriptions1;
         private EditSubscription editSubscription1;
         private CreateSubscriptionType createSubscriptionType1;
         private CheckVisitsByPeriod checkVisitsByPeriod1;

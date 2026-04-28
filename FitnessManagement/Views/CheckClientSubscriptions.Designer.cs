@@ -47,19 +47,21 @@
             // 
             // comboBox1
             // 
+            comboBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(326, 157);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(494, 23);
+            comboBox1.Size = new Size(494, 33);
             comboBox1.TabIndex = 1;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // listBox1
             // 
+            listBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(326, 206);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(494, 424);
+            listBox1.Size = new Size(494, 404);
             listBox1.TabIndex = 2;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 

@@ -41,10 +41,11 @@
             // 
             // comboBox1
             // 
+            comboBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(315, 194);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(455, 23);
+            comboBox1.Size = new Size(455, 33);
             comboBox1.TabIndex = 0;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 

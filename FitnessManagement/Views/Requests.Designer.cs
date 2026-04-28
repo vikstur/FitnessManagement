@@ -36,6 +36,7 @@
             // 
             // listBox1
             // 
+            listBox1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(76, 42);
             listBox1.Name = "listBox1";
@@ -85,6 +86,7 @@
             Controls.Add(listBox1);
             Name = "Requests";
             Size = new Size(1106, 756);
+            VisibleChanged += Requests_VisibleChanged;
             ResumeLayout(false);
         }
 

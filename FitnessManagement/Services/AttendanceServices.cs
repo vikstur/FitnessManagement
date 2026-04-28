@@ -16,7 +16,6 @@ namespace FitnessManagement.Services
             _db = new FitnessManagementDBContext();
         }
 
-        // Get users with ACTIVE subscriptions
         public List<User> GetUsersWithActiveSubscriptions()
         {
             return _db.Subscriptions
@@ -26,7 +25,6 @@ namespace FitnessManagement.Services
                 .ToList();
         }
 
-        // Get active subscription for user
         public Subscription GetActiveSubscription(int userId)
         {
             return _db.Subscriptions
@@ -55,7 +53,6 @@ namespace FitnessManagement.Services
 
             _db.Attendances.Add(attendance);
 
-            // decrease visits if basic subscription
             if (subscription.Visits != null)
             {
                 subscription.Visits -= 1;
@@ -67,7 +64,6 @@ namespace FitnessManagement.Services
             _db.SaveChanges();
         }
 
-        // Check if subscription is BASIC
         public bool IsBasicSubscription(int userId)
         {
             var sub = _db.Subscriptions

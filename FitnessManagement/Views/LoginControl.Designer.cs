@@ -60,21 +60,25 @@
             // 
             // label2
             // 
+            label2.BorderStyle = BorderStyle.Fixed3D;
             label2.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold);
             label2.Location = new Point(331, 197);
             label2.Name = "label2";
             label2.Size = new Size(78, 26);
             label2.TabIndex = 2;
             label2.Text = "Email:";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // label3
             // 
+            label3.BorderStyle = BorderStyle.Fixed3D;
             label3.Font = new Font("Sitka Text", 14.2499981F, FontStyle.Bold);
             label3.Location = new Point(301, 276);
             label3.Name = "label3";
-            label3.Size = new Size(117, 23);
+            label3.Size = new Size(117, 28);
             label3.TabIndex = 3;
             label3.Text = "Password:";
+            label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // textBox1
             // 

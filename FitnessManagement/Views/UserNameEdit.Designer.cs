@@ -51,10 +51,10 @@
             // label1
             // 
             label1.BorderStyle = BorderStyle.Fixed3D;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label1.Location = new Point(289, 260);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Location = new Point(309, 236);
             label1.Name = "label1";
-            label1.Size = new Size(100, 24);
+            label1.Size = new Size(123, 27);
             label1.TabIndex = 1;
             label1.Text = "First name:";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -62,36 +62,36 @@
             // label2
             // 
             label2.BorderStyle = BorderStyle.Fixed3D;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(289, 298);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label2.Location = new Point(309, 291);
             label2.Name = "label2";
-            label2.Size = new Size(100, 24);
+            label2.Size = new Size(123, 27);
             label2.TabIndex = 2;
             label2.Text = "Last name:";
             label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(444, 260);
+            textBox1.Location = new Point(438, 230);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(246, 24);
+            textBox1.Size = new Size(246, 33);
             textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(444, 298);
+            textBox2.Location = new Point(438, 285);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(246, 24);
+            textBox2.Size = new Size(246, 33);
             textBox2.TabIndex = 4;
             // 
             // button2
             // 
             button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button2.Location = new Point(444, 347);
+            button2.Location = new Point(438, 351);
             button2.Name = "button2";
-            button2.Size = new Size(246, 39);
+            button2.Size = new Size(246, 41);
             button2.TabIndex = 5;
             button2.Text = "Change";
             button2.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             // 
             label3.BorderStyle = BorderStyle.Fixed3D;
             label3.Font = new Font("Stencil", 20.25F, FontStyle.Bold);
-            label3.Location = new Point(400, 116);
+            label3.Location = new Point(398, 58);
             label3.Name = "label3";
             label3.Size = new Size(320, 40);
             label3.TabIndex = 6;

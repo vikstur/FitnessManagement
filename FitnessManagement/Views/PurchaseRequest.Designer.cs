@@ -55,10 +55,11 @@
             // 
             // comboBox1
             // 
+            comboBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(438, 188);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(279, 23);
+            comboBox1.Size = new Size(279, 33);
             comboBox1.TabIndex = 25;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -80,7 +81,7 @@
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label2.Location = new Point(338, 259);
             label2.Name = "label2";
-            label2.Size = new Size(83, 23);
+            label2.Size = new Size(83, 27);
             label2.TabIndex = 0;
             label2.Text = "Price:";
             label2.Click += label2_Click_1;
@@ -91,7 +92,7 @@
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label3.Location = new Point(338, 332);
             label3.Name = "label3";
-            label3.Size = new Size(83, 25);
+            label3.Size = new Size(83, 29);
             label3.TabIndex = 0;
             label3.Text = "Duration:";
             // 
@@ -101,7 +102,7 @@
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label4.Location = new Point(338, 414);
             label4.Name = "label4";
-            label4.Size = new Size(83, 22);
+            label4.Size = new Size(83, 26);
             label4.TabIndex = 27;
             label4.Text = "Services:";
             // 
@@ -111,7 +112,7 @@
             label5.BorderStyle = BorderStyle.FixedSingle;
             label5.Location = new Point(438, 259);
             label5.Name = "label5";
-            label5.Size = new Size(279, 23);
+            label5.Size = new Size(279, 27);
             label5.TabIndex = 28;
             // 
             // label6
@@ -120,7 +121,7 @@
             label6.BorderStyle = BorderStyle.FixedSingle;
             label6.Location = new Point(438, 332);
             label6.Name = "label6";
-            label6.Size = new Size(279, 23);
+            label6.Size = new Size(279, 27);
             label6.TabIndex = 29;
             label6.Click += label6_Click;
             // 
@@ -130,11 +131,12 @@
             label7.BorderStyle = BorderStyle.FixedSingle;
             label7.Location = new Point(438, 414);
             label7.Name = "label7";
-            label7.Size = new Size(279, 23);
+            label7.Size = new Size(279, 27);
             label7.TabIndex = 30;
             // 
             // button1
             // 
+            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button1.Location = new Point(440, 548);
             button1.Name = "button1";
             button1.Size = new Size(277, 48);
@@ -149,7 +151,7 @@
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label8.Location = new Point(338, 486);
             label8.Name = "label8";
-            label8.Size = new Size(83, 23);
+            label8.Size = new Size(83, 27);
             label8.TabIndex = 32;
             label8.Text = "Visits:";
             // 
@@ -159,7 +161,7 @@
             label9.BorderStyle = BorderStyle.FixedSingle;
             label9.Location = new Point(438, 487);
             label9.Name = "label9";
-            label9.Size = new Size(279, 23);
+            label9.Size = new Size(279, 27);
             label9.TabIndex = 33;
             // 
             // PurchaseRequest

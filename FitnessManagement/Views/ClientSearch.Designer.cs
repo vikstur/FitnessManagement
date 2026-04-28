@@ -86,6 +86,7 @@
             // 
             // listBox1
             // 
+            listBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(221, 281);
             listBox1.Name = "listBox1";
