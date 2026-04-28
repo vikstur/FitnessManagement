@@ -66,9 +66,9 @@
             // 
             listBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(481, 141);
+            listBox1.Location = new Point(474, 141);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(452, 479);
+            listBox1.Size = new Size(470, 479);
             listBox1.TabIndex = 3;
             // 
             // label2

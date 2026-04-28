@@ -74,6 +74,7 @@
             Name = "CheckVisits";
             Size = new Size(1106, 756);
             Load += CheckVisits_Load;
+            VisibleChanged += CheckVisits_VisibleChanged;
             ResumeLayout(false);
         }
 

@@ -21,6 +21,7 @@ namespace FitnessManagement.Views
 
             _subscriptionServices = new SubscriptionServices();
             InitializeComponent();
+            loadsubscriptionTypes();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,8 +29,7 @@ namespace FitnessManagement.Views
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("Admin");
         }
-
-        private void AdminSubscriptions_Load(object sender, EventArgs e)
+        public void loadsubscriptionTypes()
         {
             var types = _subscriptionServices.GetAllSubscriptionTypes();
             comboBox1.DataSource = types;
@@ -38,6 +38,10 @@ namespace FitnessManagement.Views
 
 
             comboBox1.SelectedIndex = -1;
+        }
+        private void AdminSubscriptions_Load(object sender, EventArgs e)
+        {
+      
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -77,7 +81,9 @@ namespace FitnessManagement.Views
                         MessageBox.Show("Cannot delete this subscription because it is currently in use by clients.");
                     }
                 }
+                loadsubscriptionTypes();
             }
+            
             else
             {
                 MessageBox.Show("Please select a subscription to delete.");
@@ -86,7 +92,13 @@ namespace FitnessManagement.Views
 
         private void AdminSubscriptions_VisibleChanged(object sender, EventArgs e)
         {
-  
+            var types = _subscriptionServices.GetAllSubscriptionTypes();
+            comboBox1.DataSource = types;
+            comboBox1.DisplayMember = "Name";
+            comboBox1.ValueMember = "Id";
+
+
+            comboBox1.SelectedIndex = -1;
         }
     }
 }

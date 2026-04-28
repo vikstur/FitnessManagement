@@ -65,5 +65,10 @@ namespace FitnessManagement.Views
             listBox1.DisplayMember = "Display";
             listBox1.ValueMember = "Id";
         }
+
+        private void Requests_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -86,6 +86,7 @@
             Controls.Add(listBox1);
             Name = "Requests";
             Size = new Size(1106, 756);
+            Load += Requests_Load;
             VisibleChanged += Requests_VisibleChanged;
             ResumeLayout(false);
         }

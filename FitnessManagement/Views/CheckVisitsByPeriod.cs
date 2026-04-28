@@ -34,17 +34,14 @@ namespace FitnessManagement.Views
             DateTime fromDate = monthCalendar1.SelectionStart;
             DateTime toDate = monthCalendar2.SelectionStart;
 
-            // 2. Validation: Make sure 'From' isn't after 'To'
             if (fromDate > toDate)
             {
                 MessageBox.Show("The 'From' date cannot be later than the 'To' date.");
                 return;
             }
 
-            // 3. Fetch the data
             var results = _visitsServices.GetVisitsByPeriod(fromDate, toDate);
 
-            // 4. Display in ListBox
             listBox1.Items.Clear();
 
             if (results.Count == 0)

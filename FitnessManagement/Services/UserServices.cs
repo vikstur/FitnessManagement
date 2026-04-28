@@ -126,7 +126,8 @@ namespace FitnessManagement.Services
         public List<User> GetAllUsers()
         {
             return _db.Users
-                .Where(u => u.Role == "Client"||u.Role=="Employee")
+                .AsNoTracking()
+                .Where(u => u.Role == "Client" || u.Role == "Employee")
                 .ToList();
         }
         public bool UpdatePersonName(string oldFullName, string newFirst, string newLast)

@@ -87,6 +87,7 @@
             Name = "UserEdit";
             Size = new Size(1106, 756);
             Load += ClientEdit_Load;
+            VisibleChanged += UserEdit_VisibleChanged;
             ResumeLayout(false);
         }
 

@@ -19,12 +19,15 @@ namespace FitnessManagement.Views
             _userServices = new UserServices();
             InitializeComponent();
         }
-
-        private void ClientEdit_Load(object sender, EventArgs e)
+        public void ClientsLoad()
         {
             var users = _userServices.GetAllUsers();
             listBox1.DataSource = users;
             listBox1.DisplayMember = "FullNameWithRole";
+        }
+        private void ClientEdit_Load(object sender, EventArgs e)
+        {
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -50,6 +53,20 @@ namespace FitnessManagement.Views
         {
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("ChangeRole");
+        }
+
+        private void UserEdit_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                var users = _userServices.GetAllUsers().ToList();
+                listBox1.DataSource = null;
+                listBox1.Items.Clear();
+
+                listBox1.DisplayMember = "FullNameWithRole";
+                listBox1.DataSource = users;
+            }
+
         }
     }
 }

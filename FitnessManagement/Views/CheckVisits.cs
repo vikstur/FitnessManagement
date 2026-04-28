@@ -17,14 +17,14 @@ namespace FitnessManagement.Views
         {
             _attendanceServices = new AttendanceServices();
             InitializeComponent();
+            LoadAttendances();
         }
 
         private void CheckVisits_Load(object sender, EventArgs e)
         {
-            
-                label1.Text =
-                    "Welcome to RGym " + UserSession.CurrentUser.FirstName + ", you can check your recent visits here";
-            LoadAttendances();
+
+            label1.Text =
+                "Welcome to RGym " + UserSession.CurrentUser.FirstName + ", you can check your recent visits here";    
         }
         private void LoadAttendances()
         {
@@ -43,6 +43,14 @@ namespace FitnessManagement.Views
         {
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("Client");
+        }
+
+        private void CheckVisits_VisibleChanged(object sender, EventArgs e)
+        {
+            var visits = _attendanceServices.GetAttendances();
+
+            listBox1.DataSource = null;
+            listBox1.DataSource = visits;
         }
     }
 }
