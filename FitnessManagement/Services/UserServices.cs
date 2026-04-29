@@ -123,6 +123,7 @@ namespace FitnessManagement.Services
 
             return query.ToList();
         }
+        //test
         public List<User> GetAllUsers()
         {
             return _db.Users
