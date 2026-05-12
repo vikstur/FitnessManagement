@@ -24,7 +24,16 @@ namespace FitnessManagement.Views
             var users = _attendanceServices.GetUsersWithActiveSubscriptions();
 
             comboBox1.DataSource = users;
-            comboBox1.DisplayMember = "FirstName";
+            comboBox1.DisplayMember = "FullName";
+            comboBox1.ValueMember = "Id";
+        }
+        private void LoadComboBoxData()
+        {
+            var users = _attendanceServices.GetUsersWithActiveSubscriptions();
+
+            comboBox1.DataSource = null;
+            comboBox1.DataSource = users;
+            comboBox1.DisplayMember = "FullName";
             comboBox1.ValueMember = "Id";
         }
 
@@ -76,6 +85,14 @@ namespace FitnessManagement.Views
         {
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("Employee");
+        }
+
+        private void Attendances_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                LoadComboBoxData();
+            }
         }
     }
 }

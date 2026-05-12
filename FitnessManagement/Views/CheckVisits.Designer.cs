@@ -45,9 +45,9 @@
             // label1
             // 
             label1.Font = new Font("Stencil", 24F, FontStyle.Bold);
-            label1.Location = new Point(342, 35);
+            label1.Location = new Point(329, 35);
             label1.Name = "label1";
-            label1.Size = new Size(437, 88);
+            label1.Size = new Size(490, 88);
             label1.TabIndex = 1;
             label1.Text = "label1";
             label1.TextAlign = ContentAlignment.TopCenter;

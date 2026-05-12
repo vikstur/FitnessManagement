@@ -22,7 +22,13 @@ namespace FitnessManagement.Views
         private void LoadRequests()
         {
             var requests = _subscriptionServices.GetPendingRequests();
-
+            listBox1.DataSource = null;
+            listBox1.Items.Clear();
+            if (requests == null || requests.Count == 0)
+            {
+                listBox1.Items.Add("There are no pending requests.");
+                return;
+            }
             listBox1.DataSource = requests;
             listBox1.DisplayMember = "Display";
             listBox1.ValueMember = "Id";
@@ -59,11 +65,10 @@ namespace FitnessManagement.Views
 
         private void Requests_VisibleChanged(object sender, EventArgs e)
         {
-            var requests = _subscriptionServices.GetPendingRequests();
-
-            listBox1.DataSource = requests;
-            listBox1.DisplayMember = "Display";
-            listBox1.ValueMember = "Id";
+            if (this.Visible)
+            {
+                LoadRequests();
+            }
         }
 
         private void Requests_Load(object sender, EventArgs e)

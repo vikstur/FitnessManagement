@@ -1,4 +1,5 @@
 ﻿using FitnessManagement.Models;
+using FitnessManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,7 @@ namespace FitnessManagement.Views
             InitializeComponent();
             HideEverything();
             homeControl1.Show();
-
+            new SubscriptionServices().UpdateExpiredStatusesInDb();
         }
         public void Change(string control)
         {

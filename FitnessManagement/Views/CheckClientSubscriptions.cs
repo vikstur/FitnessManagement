@@ -60,5 +60,10 @@ namespace FitnessManagement.Views
         {
 
         }
+
+        private void CheckClientSubscriptions_VisibleChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

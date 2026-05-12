@@ -11,13 +11,15 @@ namespace FitnessManagement.Views
 {
     public partial class CheckVisitsByDate : UserControl
     {
+        private AttendanceServices _attendanceServices;
         private VisitsServices _visitServices;
         public CheckVisitsByDate()
         {
+            _attendanceServices = new AttendanceServices();
             _visitServices = new VisitsServices();
             InitializeComponent();
         }
-
+       
         private void button2_Click(object sender, EventArgs e)
         {
             DateTime selectedDate = monthCalendar1.SelectionStart;
@@ -41,6 +43,11 @@ namespace FitnessManagement.Views
         {
             Form1 mainForm = (Form1)this.FindForm();
             mainForm.Change("Employee");
+        }
+
+        private void CheckVisitsByDate_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

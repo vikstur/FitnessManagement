@@ -113,11 +113,14 @@ namespace FitnessManagement.Services
             if (UserSession.CurrentUser == null)
                 return result;
 
+            var today = DateOnly.FromDateTime(DateTime.Now);
+
             var subscriptions = _db.Subscriptions
                 .Include(s => s.Type)
                 .Where(s =>
                     s.ClientId == UserSession.CurrentUser.Id &&
-                    s.Status == "Active")
+                    s.Status == "Active" &&
+                    s.EndDate >= today) 
                 .ToList();
 
             if (subscriptions.Count == 0)
@@ -152,10 +155,9 @@ namespace FitnessManagement.Services
                     result.Add($"SPA: {(spa ? "Available" : "Not available")}");
                 }
 
-                result.Add($"Valid to: {subscription.EndDate}");
-                result.Add(""); 
+                result.Add($"Valid to: {subscription.EndDate:dd/MM/yyyy}");
+                result.Add("");
             }
-
 
             return result;
         }
@@ -269,17 +271,15 @@ namespace FitnessManagement.Services
             var activeSubs = _db.Subscriptions
                 .Include(s => s.Client)
                 .Include(s => s.Type)
-                .Where(s => s.Status == "Active")
+                .Where(s => s.Status == "Active" && s.EndDate >= DateOnly.FromDateTime(DateTime.Now))
                 .ToList();
 
             var results = new List<string>();
-
             foreach (var sub in activeSubs)
             {
                 string info = $"{sub.Client.FirstName} {sub.Client.LastName} - {sub.Type.Name} (Ends: {sub.EndDate:dd/MM/yyyy})";
                 results.Add(info);
             }
-
             return results;
         }
         public List<string> GetAllExpiredSubscriptions()
@@ -287,17 +287,15 @@ namespace FitnessManagement.Services
             var expiredSubs = _db.Subscriptions
                 .Include(s => s.Client)
                 .Include(s => s.Type)
-                .Where(s => s.Status == "Expired")
-                .OrderByDescending(s => s.EndDate) 
+                .Where(s => s.Status == "Expired" || (s.Status == "Active" && s.EndDate < DateOnly.FromDateTime(DateTime.Now)))
+                .OrderByDescending(s => s.EndDate)
                 .ToList();
 
             var results = new List<string>();
-
             foreach (var sub in expiredSubs)
             {
                 results.Add($"{sub.Client.FirstName} {sub.Client.LastName} - {sub.Type.Name} (Expired on: {sub.EndDate:dd/MM/yyyy})");
             }
-
             return results;
         }
         public bool CancelSubscriptionByInfo(string listBoxItem)
@@ -354,6 +352,22 @@ namespace FitnessManagement.Services
             }
 
             return results;
+        }
+        public void UpdateExpiredStatusesInDb()
+        {
+            var today = DateOnly.FromDateTime(DateTime.Now);
+            var expiredSubscriptions = _db.Subscriptions
+                .Where(s => s.Status == "Active" && s.EndDate < today)
+                .ToList();
+
+            if (expiredSubscriptions.Any())
+            {
+                foreach (var sub in expiredSubscriptions)
+                {
+                    sub.Status = "Expired";
+                }
+                _db.SaveChanges();
+            }
         }
     }
 }

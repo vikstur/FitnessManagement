@@ -103,6 +103,7 @@
             Controls.Add(button1);
             Name = "CheckVisitsByDate";
             Size = new Size(1106, 756);
+            Load += CheckVisitsByDate_Load;
             ResumeLayout(false);
         }
 

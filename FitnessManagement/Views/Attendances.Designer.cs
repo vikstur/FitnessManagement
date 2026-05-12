@@ -125,7 +125,7 @@
             label2.Font = new Font("Stencil", 20.25F, FontStyle.Bold);
             label2.Location = new Point(349, 64);
             label2.Name = "label2";
-            label2.Size = new Size(389, 40);
+            label2.Size = new Size(386, 40);
             label2.TabIndex = 8;
             label2.Text = "Create attendance";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -146,6 +146,7 @@
             Name = "Attendances";
             Size = new Size(1106, 756);
             Load += Attendances_Load;
+            VisibleChanged += Attendances_VisibleChanged;
             ResumeLayout(false);
             PerformLayout();
         }

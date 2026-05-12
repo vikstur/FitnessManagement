@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FitnessManagement.Views
 {
-    public partial class 
+    public partial class
         CheckSubscription : UserControl
     {
         private UserServices _userServices;
@@ -45,7 +45,6 @@ namespace FitnessManagement.Views
 
             if (subs.Count == 0 || (subs.Count == 1 && subs[0] == "No active subscription."))
             {
-                // ❌ NO subscription
                 label1.Visible = false;
                 label2.Visible = true;
 
@@ -53,7 +52,6 @@ namespace FitnessManagement.Views
                 return;
             }
 
-            // ✅ HAS subscription(s)
             label1.Visible = true;
             label2.Visible = false;
 
@@ -62,11 +60,19 @@ namespace FitnessManagement.Views
                 listBox1.Items.Add(item);
             }
         }
-        
+
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CheckSubscription_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                CheckSubscription_Load(sender, e);
+            }
         }
     }
 }

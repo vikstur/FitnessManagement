@@ -86,6 +86,7 @@
             Name = "CheckClientSubscriptions";
             Size = new Size(1106, 756);
             Load += CheckClientSubscriptions_Load;
+            VisibleChanged += CheckClientSubscriptions_VisibleChanged;
             ResumeLayout(false);
         }
 

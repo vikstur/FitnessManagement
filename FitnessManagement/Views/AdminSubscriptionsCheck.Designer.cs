@@ -108,7 +108,7 @@
             label1.Font = new Font("Stencil", 20.25F, FontStyle.Bold);
             label1.Location = new Point(319, 46);
             label1.Name = "label1";
-            label1.Size = new Size(440, 46);
+            label1.Size = new Size(437, 46);
             label1.TabIndex = 6;
             label1.Text = "Subscriptions information";
             label1.TextAlign = ContentAlignment.TopCenter;

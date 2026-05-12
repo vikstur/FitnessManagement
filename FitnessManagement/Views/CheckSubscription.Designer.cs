@@ -36,6 +36,7 @@
             // 
             // listBox1
             // 
+            listBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(325, 210);
@@ -70,7 +71,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Stencil", 24F, FontStyle.Bold);
-            label2.Location = new Point(227, 115);
+            label2.Location = new Point(223, 115);
             label2.Name = "label2";
             label2.Size = new Size(618, 38);
             label2.TabIndex = 3;
@@ -87,6 +88,7 @@
             Name = "CheckSubscription";
             Size = new Size(1106, 756);
             Load += CheckSubscription_Load;
+            VisibleChanged += CheckSubscription_VisibleChanged;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -34,7 +34,13 @@ namespace FitnessManagement.Views
             UserServices userService = new UserServices();
 
             var clients = userService.SearchClients(textBox1.Text);
+            if (clients == null || clients.Count == 0)
+            {
+                listBox1.DataSource = null;
 
+                MessageBox.Show($"No clients found matching '{textBox1.Text}'.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             listBox1.DataSource = null;
             listBox1.DataSource = clients;
             listBox1.DisplayMember = "FullName";
